@@ -29,14 +29,17 @@ You need Python 3.11 or newer. The install check passed on Python 3.11 to 3.14 o
 If pip cannot find a version, run `pip install --pre tarsier-geo`. This release candidate is
 tested on Windows; Linux and macOS are not yet qualified.
 
-A pip install from a Git link does not include the built web interface.
+A pip install from a Git link fails, because the built web interface is not in Git.
 
-We recommend installing in a virtual environment. On Windows, run these first:
+We recommend installing in a virtual environment. On Windows, run these instead:
 
 ```powershell
 py -m venv .venv
-.venv\Scripts\activate
+.venv\Scripts\python -m pip install tarsier-geo
+.venv\Scripts\tarsier-geo start
 ```
+
+If you used these commands, put `.venv\Scripts\` in front of the other `tarsier-geo` commands too.
 
 Your browser opens on `http://localhost:8731` (or the next free port;
 `start --port 8050` picks one, `--no-browser` stops it opening). Stop Tarsier with

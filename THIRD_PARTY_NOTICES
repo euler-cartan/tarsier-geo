@@ -1,6 +1,6 @@
 # Third-party notices
 
-The Tarsier source code is Apache-2.0 (see LICENSE). Third-party components remain under their own licenses. This inventory covers the Python 3.11 and 3.14 installs, the 3.11 fresh install and the npm lock file, on Windows. It is attribution and a review aid, not a legal conclusion.
+The Tarsier source code is Apache-2.0 (see LICENSE). Third-party components remain under their own licenses. This inventory covers the Python 3.11 and 3.14 installs, fresh installs on Python 3.11 to 3.14 and the npm lock file, on Windows. It is attribution and a review aid, not a legal conclusion.
 
 ## What is bundled
 
