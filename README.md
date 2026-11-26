@@ -19,8 +19,33 @@ It connects to PostGIS / PostgreSQL, Oracle Spatial, SQL Server, folders of file
 
 ## Install
 
-Once Tarsier is published on PyPI, install it from there, not from a Git link: a Git install
-does not include the built web interface. Until then, install from this repository as below.
+```bash
+pip install tarsier-geo
+tarsier-geo start
+```
+
+You need Python 3.11 or newer. The install check passed on Python 3.11 to 3.14 on Windows.
+
+If pip cannot find a version, run `pip install --pre tarsier-geo`. This release candidate is
+tested on Windows; Linux and macOS are not yet qualified.
+
+A pip install from a Git link does not include the built web interface.
+
+We recommend installing in a virtual environment. On Windows, run these first:
+
+```powershell
+py -m venv .venv
+.venv\Scripts\activate
+```
+
+Your browser opens on `http://localhost:8731` (or the next free port;
+`start --port 8050` picks one, `--no-browser` stops it opening). Stop Tarsier with
+Ctrl+C, or from another terminal with `tarsier-geo stop`.
+
+On Python 3.14 the Relationship Graph's path queries are unavailable and that screen
+shows the connection flowchart instead.
+
+## Install from source (for contributors)
 
 You need [Git](https://git-scm.com/), [Python](https://www.python.org/downloads/)
 3.11 (recommended) or 3.14, and [Node.js](https://nodejs.org/) 24 LTS. Windows is tested
@@ -55,19 +80,14 @@ npm run build --workspace=frontend
 ```
 
 Build the frontend before installing the Python package, because the package
-includes it. Your browser opens on `http://localhost:8731` (or the next free port;
-`start --port 8050` picks one, `--no-browser` stops it opening). Stop Tarsier with
-Ctrl+C, or from another terminal with `tarsier-geo stop`. On a bare Linux container
-image, install the system library `libexpat1` first.
-
-On Python 3.14 the Relationship Graph's path queries are unavailable and that screen
-shows the connection flowchart instead.
+includes it. On a bare Linux container image, install the system library `libexpat1` first.
 
 ## Try it on sample data
 
 [`sample-data/`](https://github.com/euler-cartan/tarsier-geo/blob/main/sample-data/README.md) holds a small, invented set of databases and
 files. With Docker it is two commands and four connections appear in Tarsier, so you
-can try every screen without touching real data.
+can try every screen without touching real data. The sample data is in the
+[GitHub repository](https://github.com/euler-cartan/tarsier-geo), not in the pip package: download the repository to use it.
 
 ## Connect your own data
 
