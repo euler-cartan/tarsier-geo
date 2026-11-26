@@ -1,0 +1,46 @@
+# One command: a throw-away PostGIS server with the Tarsier sample data loaded.
+#
+#   docker compose -f sample-data/docker-compose.yml up
+#
+# Then use the connection details printed at the end (host 127.0.0.1, the port
+# below, password "tarsier-sample"). Remove it all with:
+#
+#   docker compose -f sample-data/docker-compose.yml down -v
+#
+# The passwords here are public on purpose: this server is for learning only,
+# holds invented data, and listens on 127.0.0.1, so only this computer can reach it.
+name: tarsier-sample
+
+services:
+  db:
+    image: postgis/postgis:16-3.4
+    environment:
+      POSTGRES_PASSWORD: tarsier-sample-admin
+    ports:
+      - "127.0.0.1:${TARSIER_SAMPLE_PORT:-55432}:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+    volumes:
+      - sample-db:/var/lib/postgresql/data
+
+  loader:
+    image: python:3.12-slim
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      TARSIER_SAMPLE_IN_DOCKER: "1"
+    volumes:
+      - ./:/sample:ro
+    command:
+      - sh
+      - -c
+      - >-
+        pip install --quiet --disable-pip-version-check 'psycopg[binary]' &&
+        python /sample/load_sample_data.py --host db --port 5432 --admin-password tarsier-sample-admin --reader-password tarsier-sample --recreate --advertise-host 127.0.0.1 --advertise-port ${TARSIER_SAMPLE_PORT:-55432}
+
+volumes:
+  sample-db:

@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"name": "demo_features",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "sample_id": 1, "label": "Demo A" }, "geometry": { "type": "Point", "coordinates": [ -77.436, 37.541 ] } },
+{ "type": "Feature", "properties": { "sample_id": 2, "label": "Demo B" }, "geometry": { "type": "Point", "coordinates": [ -77.435771192821917, 37.54108607233352 ] } },
+{ "type": "Feature", "properties": { "sample_id": 3, "label": "Demo C" }, "geometry": { "type": "Point", "coordinates": [ -77.43622880664357, 37.540913927216344 ] } }
+]
+}

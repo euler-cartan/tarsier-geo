@@ -1,0 +1,12 @@
+Tarsier
+Copyright 2026 The Tarsier Contributors
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+Third-party material used or referenced in this project:
+
+Kuzu (https://github.com/kuzudb/kuzu) - MIT License, Copyright (c) Kuzu Inc.
+  Used as an installed dependency (kuzu==0.11.3) for the Spatial Knowledge Graph
+  Engine (tarsier/graph/engine.py). The way it is called (Database/Connection,
+  parameterised execute(), `[e* SHORTEST 1..N]` recursive relationships with a
+  `(r, n | WHERE ...)` predicate) follows the examples in Kuzu's own Python tests
+  and demo_db.test. No Kuzu source code is copied into Tarsier.

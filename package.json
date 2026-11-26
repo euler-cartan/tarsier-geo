@@ -1,0 +1,7 @@
+{
+  "name": "tarsier-geo-workspace",
+  "version": "1.0.0-rc1",
+  "private": true,
+  "description": "Workspace for the Tarsier frontend.",
+  "workspaces": ["frontend"]
+}

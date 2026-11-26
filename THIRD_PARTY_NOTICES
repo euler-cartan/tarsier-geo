@@ -1,0 +1,351 @@
+# Third-party notices
+
+The Tarsier source code is Apache-2.0 (see LICENSE). Third-party components remain under their own licenses. This inventory covers the Python 3.11 and 3.14 installs, the 3.11 fresh install and the npm lock file, on Windows. It is attribution and a review aid, not a legal conclusion.
+
+## What is bundled
+
+The repository tracks source code, package manifests/lockfiles, synthetic fixtures and the font/CSS imports. The Python wheel bundles the built browser assets, including Inter and Newsreader font files and the MapLibre worker, plus this notice and its linked license texts. The repository does not track Python or npm site-packages/node_modules binaries. Users install Python dependencies with pip and frontend build dependencies with npm; their platform wheels and optional native libraries may contain further terms.
+
+**What this package copies:** the built web interface contains code from npm packages, including the libraries inside MapLibre GL JS, under permissive licences (such as MIT, ISC and BSD), and the Inter and Newsreader fonts (SIL Open Font License 1.1). Their licence texts are linked below and included in the package. No LGPL, GPL or MPL code is copied into the package.
+
+**Installed separately by pip from their own publishers:** psycopg and psycopg-binary (LGPL-3.0), pymssql (LGPL-2.1) and certifi (MPL-2.0). Some binary wheels also contain native libraries under LGPL or other terms, for example GEOS. lightningcss and pathspec (MPL-2.0) are used only to build.
+
+This inventory covers Windows only, as the README does: Linux and macOS are not yet qualified and may install other packages. It has not been reviewed by a lawyer. Kuzu 0.11.3 is archived and unsupported upstream; that is a maintenance risk independent of license.
+
+## Python installed distributions
+
+| Package | Version | Python | Declared license | License text files |
+|---|---|---|---|---|
+| affine | 3.0.1 | 3.11, 3.14 | BSD-3-Clause | [fc3636b54ff4072c.txt](third_party_licenses/texts/fc3636b54ff4072c.txt) |
+| annotated-doc | 0.0.5 | 3.11, 3.14 | MIT | [fff170779a6acbf6.txt](third_party_licenses/texts/fff170779a6acbf6.txt) |
+| annotated-doc | 0.0.7 | 3.11 fresh install | MIT | [fff170779a6acbf6.txt](third_party_licenses/texts/fff170779a6acbf6.txt) |
+| annotated-types | 0.8.0 | 3.11, 3.14 | MIT | [fe1049884b1a0d93.txt](third_party_licenses/texts/fe1049884b1a0d93.txt) |
+| anyio | 4.15.1 | 3.11, 3.14 | MIT | [5361ac9dc58f2ef5.txt](third_party_licenses/texts/5361ac9dc58f2ef5.txt) |
+| anyio | 4.16.0 | 3.11 fresh install | MIT | [5361ac9dc58f2ef5.txt](third_party_licenses/texts/5361ac9dc58f2ef5.txt) |
+| APScheduler | 3.11.3 | 3.11, 3.14 | MIT | [6163f7987dfb38d6.txt](third_party_licenses/texts/6163f7987dfb38d6.txt) |
+| attrs | 26.1.0 | 3.11, 3.14 | MIT | [882115c95dfc2af1.txt](third_party_licenses/texts/882115c95dfc2af1.txt) |
+| backports.tarfile | 1.2.0 | 3.11 | Development Status :: 5 - Production/Stable; Intended Audience :: Developers; License :: OSI Approved :: MIT License; Programming  | [86da0f01aeae4634.txt](third_party_licenses/texts/86da0f01aeae4634.txt) |
+| certifi | 2026.10.23 | 3.11, 3.14 | MPL-2.0 | [e93716da6b9c0d5a.txt](third_party_licenses/texts/e93716da6b9c0d5a.txt) |
+| certifi | 2026.11.20 | 3.11 fresh install | MPL-2.0 | [e93716da6b9c0d5a.txt](third_party_licenses/texts/e93716da6b9c0d5a.txt) |
+| cffi | 2.1.1 | 3.11, 3.14 | MIT-0 | [5ba24ddc57067f92.txt](third_party_licenses/texts/5ba24ddc57067f92.txt) |
+| charset-normalizer | 3.5.2 | 3.11, 3.14 | MIT | [18577485d3704f1a.txt](third_party_licenses/texts/18577485d3704f1a.txt) |
+| charset-normalizer | 3.5.3 | 3.11 fresh install | MIT | [18577485d3704f1a.txt](third_party_licenses/texts/18577485d3704f1a.txt) |
+| click | 8.5.0 | 3.11, 3.14 | BSD-3-Clause | [9a8ad106a394e853.txt](third_party_licenses/texts/9a8ad106a394e853.txt) |
+| click | 8.5.1 | 3.11 fresh install | BSD-3-Clause | [9a8ad106a394e853.txt](third_party_licenses/texts/9a8ad106a394e853.txt) |
+| click-plugins | 1.1.1.2 | 3.11 | New BSD | [fa1986d06c7d3ba7.txt](third_party_licenses/texts/fa1986d06c7d3ba7.txt) |
+| cligj | 0.7.2 | 3.11 | BSD | [5902d716544ddf9a.txt](third_party_licenses/texts/5902d716544ddf9a.txt) |
+| colorama | 0.4.6 | 3.11, 3.14 | Development Status :: 5 - Production/Stable; Environment :: Console; Intended Audience :: Developers; License :: OSI Approved :: B | [cac35c02686e5d04.txt](third_party_licenses/texts/cac35c02686e5d04.txt) |
+| cryptography | 50.0.2 | 3.11, 3.14 | Apache-2.0 OR BSD-3-Clause | [3e0c7c091a948b82.txt](third_party_licenses/texts/3e0c7c091a948b82.txt), [aac73b3148f6d1d7.txt](third_party_licenses/texts/aac73b3148f6d1d7.txt), [602c4c7482de6479.txt](third_party_licenses/texts/602c4c7482de6479.txt) |
+| duckdb | 1.5.6 | 3.11, 3.14 | Development Status :: 5 - Production/Stable; License :: OSI Approved :: MIT License; Operating System :: OS Independent; Topic ::  | [c8dd1b346eacc9c7.txt](third_party_licenses/texts/c8dd1b346eacc9c7.txt), [bc219cdc6410cc92.txt](third_party_licenses/texts/bc219cdc6410cc92.txt) |
+| fastapi | 0.162.0 | 3.11, 3.14 | MIT | [4ec89ffc81485b97.txt](third_party_licenses/texts/4ec89ffc81485b97.txt) |
+| fastapi | 0.165.0 | 3.11 fresh install | MIT | [4ec89ffc81485b97.txt](third_party_licenses/texts/4ec89ffc81485b97.txt) |
+| geopandas | 1.2.0 | 3.11, 3.14 | BSD-3-Clause | [c60efa15937a5a82.txt](third_party_licenses/texts/c60efa15937a5a82.txt) |
+| h11 | 0.16.0 | 3.11, 3.14 | MIT | [37db5bb85926db28.txt](third_party_licenses/texts/37db5bb85926db28.txt) |
+| httpcore | 1.0.9 | 3.11, 3.14 | BSD-3-Clause | [fdcb59154c74cbab.txt](third_party_licenses/texts/fdcb59154c74cbab.txt) |
+| httptools | 0.9.0 | 3.11, 3.14 | MIT | [1c028b059d7a58e1.txt](third_party_licenses/texts/1c028b059d7a58e1.txt), [5cd1b682c0ccbac0.txt](third_party_licenses/texts/5cd1b682c0ccbac0.txt), [279012e02a10acfd.txt](third_party_licenses/texts/279012e02a10acfd.txt) |
+| httpx | 0.28.1 | 3.11, 3.14 | BSD-3-Clause | [4ec59d544f12b5f5.txt](third_party_licenses/texts/4ec59d544f12b5f5.txt) |
+| idna | 3.20 | 3.11, 3.14 | BSD-3-Clause | [1a9a4f0e3d479a27.txt](third_party_licenses/texts/1a9a4f0e3d479a27.txt) |
+| importlib_metadata | 10.1.0 | 3.11 | Apache-2.0 | [e2f7bb0557e7a381.txt](third_party_licenses/texts/e2f7bb0557e7a381.txt) |
+| importlib_metadata | 10.2.0 | 3.11 fresh install | Apache-2.0 | [e2f7bb0557e7a381.txt](third_party_licenses/texts/e2f7bb0557e7a381.txt) |
+| iniconfig | 2.3.1 | 3.11, 3.14 | MIT | [3409fa91f7ace557.txt](third_party_licenses/texts/3409fa91f7ace557.txt) |
+| jaraco.classes | 3.4.0 | 3.11, 3.14 | Development Status :: 5 - Production/Stable; Intended Audience :: Developers; License :: OSI Approved :: MIT License; Programming  | [86da0f01aeae4634.txt](third_party_licenses/texts/86da0f01aeae4634.txt) |
+| jaraco.context | 6.1.2 | 3.11, 3.14 | MIT | [9755a18519666e5f.txt](third_party_licenses/texts/9755a18519666e5f.txt) |
+| jaraco.functools | 4.6.0 | 3.11, 3.14 | MIT | [9755a18519666e5f.txt](third_party_licenses/texts/9755a18519666e5f.txt) |
+| keyring | 25.7.0 | 3.11, 3.14 | MIT | [5a57cb4db85e2a2d.txt](third_party_licenses/texts/5a57cb4db85e2a2d.txt) |
+| kuzu | 0.11.3 | 3.11 | MIT | [e557ab4486dba483.txt](third_party_licenses/texts/e557ab4486dba483.txt) |
+| lazy-importer | 0.1.0 | 3.11 fresh install | Apache-2.0 | [c71d239df91726fc.txt](third_party_licenses/texts/c71d239df91726fc.txt) |
+| more-itertools | 11.2.1 | 3.11, 3.14 | MIT | [09f1c8c9e941af3e.txt](third_party_licenses/texts/09f1c8c9e941af3e.txt) |
+| numpy | 2.4.6 | 3.11 | BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0 | [a804dff0ead9fadc.txt](third_party_licenses/texts/a804dff0ead9fadc.txt), [d544761558b51086.txt](third_party_licenses/texts/d544761558b51086.txt), [aea41976c720f91b.txt](third_party_licenses/texts/aea41976c720f91b.txt), [d208152e2777ffd0.txt](third_party_licenses/texts/d208152e2777ffd0.txt), [b0fd592d4ead5631.txt](third_party_licenses/texts/b0fd592d4ead5631.txt), [a732977853530066.txt](third_party_licenses/texts/a732977853530066.txt), [585483905b13d4b4.txt](third_party_licenses/texts/585483905b13d4b4.txt), [8db000e158c162e7.txt](third_party_licenses/texts/8db000e158c162e7.txt), [19060ef465e1797d.txt](third_party_licenses/texts/19060ef465e1797d.txt), [d78dbb208b80d92b.txt](third_party_licenses/texts/d78dbb208b80d92b.txt), [b4bc2f4fa1c95778.txt](third_party_licenses/texts/b4bc2f4fa1c95778.txt), [cf5619f25b112d5c.txt](third_party_licenses/texts/cf5619f25b112d5c.txt), [92c10699884321f1.txt](third_party_licenses/texts/92c10699884321f1.txt), [41190663b77bee53.txt](third_party_licenses/texts/41190663b77bee53.txt), [322ac46d870c8aee.txt](third_party_licenses/texts/322ac46d870c8aee.txt), [28cad82ce1379dc5.txt](third_party_licenses/texts/28cad82ce1379dc5.txt), [454ec7350e478e03.txt](third_party_licenses/texts/454ec7350e478e03.txt) |
+| numpy | 2.5.4 | 3.14 | BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0 | [a804dff0ead9fadc.txt](third_party_licenses/texts/a804dff0ead9fadc.txt), [d544761558b51086.txt](third_party_licenses/texts/d544761558b51086.txt), [aea41976c720f91b.txt](third_party_licenses/texts/aea41976c720f91b.txt), [d208152e2777ffd0.txt](third_party_licenses/texts/d208152e2777ffd0.txt), [b0fd592d4ead5631.txt](third_party_licenses/texts/b0fd592d4ead5631.txt), [a732977853530066.txt](third_party_licenses/texts/a732977853530066.txt), [585483905b13d4b4.txt](third_party_licenses/texts/585483905b13d4b4.txt), [8db000e158c162e7.txt](third_party_licenses/texts/8db000e158c162e7.txt), [19060ef465e1797d.txt](third_party_licenses/texts/19060ef465e1797d.txt), [d78dbb208b80d92b.txt](third_party_licenses/texts/d78dbb208b80d92b.txt), [b4bc2f4fa1c95778.txt](third_party_licenses/texts/b4bc2f4fa1c95778.txt), [cf5619f25b112d5c.txt](third_party_licenses/texts/cf5619f25b112d5c.txt), [92c10699884321f1.txt](third_party_licenses/texts/92c10699884321f1.txt), [41190663b77bee53.txt](third_party_licenses/texts/41190663b77bee53.txt), [322ac46d870c8aee.txt](third_party_licenses/texts/322ac46d870c8aee.txt), [28cad82ce1379dc5.txt](third_party_licenses/texts/28cad82ce1379dc5.txt), [454ec7350e478e03.txt](third_party_licenses/texts/454ec7350e478e03.txt) |
+| opentelemetry-api | 1.45.1 | 3.11, 3.14 | Apache-2.0 | [c71d239df91726fc.txt](third_party_licenses/texts/c71d239df91726fc.txt) |
+| opentelemetry-api | 1.45.2 | 3.11, 3.14 | Apache-2.0 | [c71d239df91726fc.txt](third_party_licenses/texts/c71d239df91726fc.txt) |
+| oracledb | 26.0.1 | 3.11, 3.14 | UPL-1.0 OR Apache-2.0 | [3dd45fab9abe3598.txt](third_party_licenses/texts/3dd45fab9abe3598.txt), [b4fd0e3bd5a85f57.txt](third_party_licenses/texts/b4fd0e3bd5a85f57.txt), [cbcfcdc601b769dc.txt](third_party_licenses/texts/cbcfcdc601b769dc.txt) |
+| oracledb | 26.2.0 | 3.11 fresh install | UPL-1.0 OR Apache-2.0 | [3dd45fab9abe3598.txt](third_party_licenses/texts/3dd45fab9abe3598.txt), [b4fd0e3bd5a85f57.txt](third_party_licenses/texts/b4fd0e3bd5a85f57.txt), [cbcfcdc601b769dc.txt](third_party_licenses/texts/cbcfcdc601b769dc.txt) |
+| packaging | 26.3 | 3.11, 3.14 | Apache-2.0 OR BSD-2-Clause | [cad1ef5bd340d73e.txt](third_party_licenses/texts/cad1ef5bd340d73e.txt), [0d542e0c8804e39a.txt](third_party_licenses/texts/0d542e0c8804e39a.txt), [b70e7e9b742f1cc6.txt](third_party_licenses/texts/b70e7e9b742f1cc6.txt) |
+| packaging | 26.4 | 3.11 fresh install | Apache-2.0 OR BSD-2-Clause | [cad1ef5bd340d73e.txt](third_party_licenses/texts/cad1ef5bd340d73e.txt), [a6cba85bc92e0cff.txt](third_party_licenses/texts/a6cba85bc92e0cff.txt), [b70e7e9b742f1cc6.txt](third_party_licenses/texts/b70e7e9b742f1cc6.txt) |
+| pandas | 3.1.0 | 3.11, 3.14 | BSD-3-Clause | [9850f6b5bdef7346.txt](third_party_licenses/texts/9850f6b5bdef7346.txt), [053a90e30580f5d9.txt](third_party_licenses/texts/053a90e30580f5d9.txt), [ba00f51a0d92823b.txt](third_party_licenses/texts/ba00f51a0d92823b.txt), [48216b40b3d1b194.txt](third_party_licenses/texts/48216b40b3d1b194.txt), [7463172c3a23321c.txt](third_party_licenses/texts/7463172c3a23321c.txt), [50a343c1ce9e27cd.txt](third_party_licenses/texts/50a343c1ce9e27cd.txt), [81d42da02a56b611.txt](third_party_licenses/texts/81d42da02a56b611.txt), [1871330068a18f1f.txt](third_party_licenses/texts/1871330068a18f1f.txt), [3b2f81fe21d181c4.txt](third_party_licenses/texts/3b2f81fe21d181c4.txt), [eafcd440e3570c6b.txt](third_party_licenses/texts/eafcd440e3570c6b.txt), [70aedcd6928272bd.txt](third_party_licenses/texts/70aedcd6928272bd.txt), [458d5fd417582544.txt](third_party_licenses/texts/458d5fd417582544.txt), [f371ccf0fb892a4c.txt](third_party_licenses/texts/f371ccf0fb892a4c.txt), [2bfbb5bb8ec66d13.txt](third_party_licenses/texts/2bfbb5bb8ec66d13.txt), [501352acba62cc54.txt](third_party_licenses/texts/501352acba62cc54.txt), [097a889aa954d04e.txt](third_party_licenses/texts/097a889aa954d04e.txt), [8d8291caf1cee26d.txt](third_party_licenses/texts/8d8291caf1cee26d.txt), [e562f3f974ced7e6.txt](third_party_licenses/texts/e562f3f974ced7e6.txt) |
+| pandas | 3.1.1 | 3.11 fresh install | BSD-3-Clause | [9850f6b5bdef7346.txt](third_party_licenses/texts/9850f6b5bdef7346.txt), [053a90e30580f5d9.txt](third_party_licenses/texts/053a90e30580f5d9.txt), [ba00f51a0d92823b.txt](third_party_licenses/texts/ba00f51a0d92823b.txt), [48216b40b3d1b194.txt](third_party_licenses/texts/48216b40b3d1b194.txt), [87217d0a79195441.txt](third_party_licenses/texts/87217d0a79195441.txt), [7463172c3a23321c.txt](third_party_licenses/texts/7463172c3a23321c.txt), [50a343c1ce9e27cd.txt](third_party_licenses/texts/50a343c1ce9e27cd.txt), [81d42da02a56b611.txt](third_party_licenses/texts/81d42da02a56b611.txt), [1871330068a18f1f.txt](third_party_licenses/texts/1871330068a18f1f.txt), [3b2f81fe21d181c4.txt](third_party_licenses/texts/3b2f81fe21d181c4.txt), [eafcd440e3570c6b.txt](third_party_licenses/texts/eafcd440e3570c6b.txt), [70aedcd6928272bd.txt](third_party_licenses/texts/70aedcd6928272bd.txt), [458d5fd417582544.txt](third_party_licenses/texts/458d5fd417582544.txt), [f371ccf0fb892a4c.txt](third_party_licenses/texts/f371ccf0fb892a4c.txt), [2bfbb5bb8ec66d13.txt](third_party_licenses/texts/2bfbb5bb8ec66d13.txt), [501352acba62cc54.txt](third_party_licenses/texts/501352acba62cc54.txt), [097a889aa954d04e.txt](third_party_licenses/texts/097a889aa954d04e.txt), [8d8291caf1cee26d.txt](third_party_licenses/texts/8d8291caf1cee26d.txt), [e562f3f974ced7e6.txt](third_party_licenses/texts/e562f3f974ced7e6.txt) |
+| pip | 24.0 | 3.11 | MIT | [634300a669d49aea.txt](third_party_licenses/texts/634300a669d49aea.txt) |
+| pip | 25.2 | 3.14 | MIT | [634300a669d49aea.txt](third_party_licenses/texts/634300a669d49aea.txt), [86eeee87be2a43f3.txt](third_party_licenses/texts/86eeee87be2a43f3.txt), [e93716da6b9c0d5a.txt](third_party_licenses/texts/e93716da6b9c0d5a.txt), [1ab36e3e2a4ba863.txt](third_party_licenses/texts/1ab36e3e2a4ba863.txt), [808e10c8a6ab8deb.txt](third_party_licenses/texts/808e10c8a6ab8deb.txt), [cb5e8e7e5f4a3988.txt](third_party_licenses/texts/cb5e8e7e5f4a3988.txt), [a59f0b0ef3635874.txt](third_party_licenses/texts/a59f0b0ef3635874.txt), [492dedba85da5872.txt](third_party_licenses/texts/492dedba85da5872.txt), [cad1ef5bd340d73e.txt](third_party_licenses/texts/cad1ef5bd340d73e.txt), [0d542e0c8804e39a.txt](third_party_licenses/texts/0d542e0c8804e39a.txt), [b70e7e9b742f1cc6.txt](third_party_licenses/texts/b70e7e9b742f1cc6.txt), [86da0f01aeae4634.txt](third_party_licenses/texts/86da0f01aeae4634.txt), [29e0fd62e929850e.txt](third_party_licenses/texts/29e0fd62e929850e.txt), [a9d66f1d526df02e.txt](third_party_licenses/texts/a9d66f1d526df02e.txt), [1b22b049b5267d6d.txt](third_party_licenses/texts/1b22b049b5267d6d.txt), [09e8a9bcec806710.txt](third_party_licenses/texts/09e8a9bcec806710.txt), [f388fd38cad13112.txt](third_party_licenses/texts/f388fd38cad13112.txt), [deed7c17a4318158.txt](third_party_licenses/texts/deed7c17a4318158.txt), [b80816b0d530b8ac.txt](third_party_licenses/texts/b80816b0d530b8ac.txt), [97ce9330905a172d.txt](third_party_licenses/texts/97ce9330905a172d.txt), [33be7b7e8fa4fd19.txt](third_party_licenses/texts/33be7b7e8fa4fd19.txt), [c37bf186e27cf9db.txt](third_party_licenses/texts/c37bf186e27cf9db.txt) |
+| pluggy | 1.7.0 | 3.11, 3.14 | MIT | [d6b65e6c213a5d0b.txt](third_party_licenses/texts/d6b65e6c213a5d0b.txt) |
+| psycopg | 3.3.6 | 3.11, 3.14 | LGPL-3.0-only | [e3a994d82e644b03.txt](third_party_licenses/texts/e3a994d82e644b03.txt) |
+| psycopg | 3.3.9 | 3.11 fresh install | LGPL-3.0-only | [e3a994d82e644b03.txt](third_party_licenses/texts/e3a994d82e644b03.txt) |
+| psycopg-binary | 3.3.6 | 3.11, 3.14 | LGPL-3.0-only | [7d3a95e5e0697806.txt](third_party_licenses/texts/7d3a95e5e0697806.txt) |
+| psycopg-binary | 3.3.9 | 3.11 fresh install | LGPL-3.0-only | [e3a994d82e644b03.txt](third_party_licenses/texts/e3a994d82e644b03.txt) |
+| pyarrow | 26.0.0 | 3.11, 3.14 | Apache-2.0 | [2a255e0ef5946efd.txt](third_party_licenses/texts/2a255e0ef5946efd.txt), [2ccca1e730e671f5.txt](third_party_licenses/texts/2ccca1e730e671f5.txt) |
+| pyarrow | 26.0.1 | 3.11 fresh install | Apache-2.0 | [2a255e0ef5946efd.txt](third_party_licenses/texts/2a255e0ef5946efd.txt), [2ccca1e730e671f5.txt](third_party_licenses/texts/2ccca1e730e671f5.txt) |
+| pycparser | 3.12 | 3.11, 3.14 | BSD-3-Clause | [0a9e78156ae8b96c.txt](third_party_licenses/texts/0a9e78156ae8b96c.txt) |
+| pydantic | 2.14.1 | 3.11, 3.14 | MIT | [a9e186f3ca16b5ee.txt](third_party_licenses/texts/a9e186f3ca16b5ee.txt) |
+| pydantic | 2.14.4 | 3.11 fresh install | MIT | [a9e186f3ca16b5ee.txt](third_party_licenses/texts/a9e186f3ca16b5ee.txt) |
+| pydantic_core | 2.50.1 | 3.11, 3.14 | MIT | [fbe7f615f18d135c.txt](third_party_licenses/texts/fbe7f615f18d135c.txt) |
+| pydantic_core | 2.50.5 | 3.11 fresh install | MIT | [fbe7f615f18d135c.txt](third_party_licenses/texts/fbe7f615f18d135c.txt) |
+| Pygments | 2.21.0 | 3.11, 3.14 | BSD-2-Clause | [a9d66f1d526df02e.txt](third_party_licenses/texts/a9d66f1d526df02e.txt) |
+| pymssql | 2.4.5 | 3.11, 3.14 | GNU LESSER GENERAL PUBLIC LICENSE | [319daefe38ebeead.txt](third_party_licenses/texts/319daefe38ebeead.txt) |
+| pymssql | 2.4.6 | 3.11 fresh install | GNU LESSER GENERAL PUBLIC LICENSE | [319daefe38ebeead.txt](third_party_licenses/texts/319daefe38ebeead.txt) |
+| pyogrio | 0.13.0 | 3.11, 3.14 | MIT License | [d4f257af1744b6db.txt](third_party_licenses/texts/d4f257af1744b6db.txt), [1dae3468e81d00da.txt](third_party_licenses/texts/1dae3468e81d00da.txt) |
+| pyparsing | 3.3.3 | 3.11, 3.14 | MIT | [a5425f9dc14ac74d.txt](third_party_licenses/texts/a5425f9dc14ac74d.txt) |
+| pyproj | 3.7.2 | 3.11 | MIT | [c25d436b6fc9009a.txt](third_party_licenses/texts/c25d436b6fc9009a.txt), [ec8ad0defdbcfac5.txt](third_party_licenses/texts/ec8ad0defdbcfac5.txt) |
+| pyproj | 3.8.0 | 3.14 | MIT | [c25d436b6fc9009a.txt](third_party_licenses/texts/c25d436b6fc9009a.txt), [ec8ad0defdbcfac5.txt](third_party_licenses/texts/ec8ad0defdbcfac5.txt) |
+| pytest | 9.1.1 | 3.11, 3.14 | MIT | [ca836a5f9ecca3b2.txt](third_party_licenses/texts/ca836a5f9ecca3b2.txt) |
+| pytest | 9.2.0 | 3.11 fresh install | MIT | [ca836a5f9ecca3b2.txt](third_party_licenses/texts/ca836a5f9ecca3b2.txt) |
+| python-dateutil | 3.0.0 | 3.11, 3.14 | Dual License | [ba00f51a0d92823b.txt](third_party_licenses/texts/ba00f51a0d92823b.txt) |
+| python-dateutil | 4.0.0 | 3.11 fresh install | BSD-3-Clause | [ba00f51a0d92823b.txt](third_party_licenses/texts/ba00f51a0d92823b.txt) |
+| python-dotenv | 1.2.4 | 3.11, 3.14 | BSD-3-Clause | [80619b7049f08c81.txt](third_party_licenses/texts/80619b7049f08c81.txt) |
+| pywin32-ctypes | 0.2.3 | 3.11, 3.14 | BSD-3-Clause | [dfa83b3e2709adfc.txt](third_party_licenses/texts/dfa83b3e2709adfc.txt) |
+| PyYAML | 6.0.3 | 3.11, 3.14 | MIT | [8d3928f9dc4490fd.txt](third_party_licenses/texts/8d3928f9dc4490fd.txt) |
+| PyYAML | 6.0.4 | 3.11 fresh install | MIT | [8d3928f9dc4490fd.txt](third_party_licenses/texts/8d3928f9dc4490fd.txt) |
+| rasterio | 1.4.4 | 3.11 | BSD | [6332e0bd7836f930.txt](third_party_licenses/texts/6332e0bd7836f930.txt), [1dae3468e81d00da.txt](third_party_licenses/texts/1dae3468e81d00da.txt) |
+| rasterio | 1.5.2 | 3.14 | BSD-3-Clause | [6332e0bd7836f930.txt](third_party_licenses/texts/6332e0bd7836f930.txt), [1dae3468e81d00da.txt](third_party_licenses/texts/1dae3468e81d00da.txt) |
+| requests | 2.34.2 | 3.11, 3.14 | Apache-2.0 | [09e8a9bcec806710.txt](third_party_licenses/texts/09e8a9bcec806710.txt), [f5110972dedad2b4.txt](third_party_licenses/texts/f5110972dedad2b4.txt) |
+| setuptools | 65.5.0 | 3.11 | Development Status :: 5 - Production/Stable; Intended Audience :: Developers; License :: OSI Approved :: MIT License; Programming  | [db3f0246b1f9278f.txt](third_party_licenses/texts/db3f0246b1f9278f.txt) |
+| shapely | 2.2.0 | 3.11, 3.14 | BSD-3-Clause | [e8cd7d34604d2758.txt](third_party_licenses/texts/e8cd7d34604d2758.txt), [7233baa9a7d4a172.txt](third_party_licenses/texts/7233baa9a7d4a172.txt), [fdbb2abb8c598c88.txt](third_party_licenses/texts/fdbb2abb8c598c88.txt) |
+| six | 1.17.0 | 3.11, 3.14 | MIT | [4375ba20e2b9c6c4.txt](third_party_licenses/texts/4375ba20e2b9c6c4.txt) |
+| SQLAlchemy | 2.1.6 | 3.11, 3.14 | MIT | [9bb754071e711cf7.txt](third_party_licenses/texts/9bb754071e711cf7.txt) |
+| SQLAlchemy | 2.1.9 | 3.11 fresh install | MIT | [9bb754071e711cf7.txt](third_party_licenses/texts/9bb754071e711cf7.txt) |
+| starlette | 1.10.0 | 3.11, 3.14 | BSD-3-Clause | [dcb95677a0224024.txt](third_party_licenses/texts/dcb95677a0224024.txt) |
+| typing_extensions | 4.16.0 | 3.11, 3.14 | PSF-2.0 | [3b2f81fe21d181c4.txt](third_party_licenses/texts/3b2f81fe21d181c4.txt) |
+| typing-inspection | 0.4.4 | 3.11, 3.14 | MIT | [804b59b25f2c31bd.txt](third_party_licenses/texts/804b59b25f2c31bd.txt) |
+| typing-inspection | 0.4.5 | 3.11 fresh install | MIT | [804b59b25f2c31bd.txt](third_party_licenses/texts/804b59b25f2c31bd.txt) |
+| tzdata | 2026.5 | 3.11, 3.14 | Apache-2.0 | [df58f69ea8868303.txt](third_party_licenses/texts/df58f69ea8868303.txt), [c71d239df91726fc.txt](third_party_licenses/texts/c71d239df91726fc.txt) |
+| tzdata | 2026.6 | 3.11 fresh install | Apache-2.0 | [df58f69ea8868303.txt](third_party_licenses/texts/df58f69ea8868303.txt), [c71d239df91726fc.txt](third_party_licenses/texts/c71d239df91726fc.txt) |
+| tzlocal | 5.4.5 | 3.11, 3.14 | MIT | [d99ab209aeb16aad.txt](third_party_licenses/texts/d99ab209aeb16aad.txt) |
+| urllib3 | 2.8.0 | 3.11, 3.14 | MIT | [130e3a64d5fdd5d0.txt](third_party_licenses/texts/130e3a64d5fdd5d0.txt) |
+| uvicorn | 0.54.0 | 3.11, 3.14 | BSD-3-Clause | [efe1acf3e62fb99c.txt](third_party_licenses/texts/efe1acf3e62fb99c.txt) |
+| watchfiles | 1.3.0 | 3.11, 3.14 | MIT | [2d40a03346bded8d.txt](third_party_licenses/texts/2d40a03346bded8d.txt) |
+| websockets | 17.3 | 3.11, 3.14 | BSD-3-Clause | [0f44514998aca209.txt](third_party_licenses/texts/0f44514998aca209.txt) |
+| websockets | 17.4 | 3.11 fresh install | BSD-3-Clause | [0f44514998aca209.txt](third_party_licenses/texts/0f44514998aca209.txt) |
+| zipp | 4.1.2 | 3.11 | MIT | [9755a18519666e5f.txt](third_party_licenses/texts/9755a18519666e5f.txt) |
+
+## Python wheel build requirements
+
+These are installed in the isolated pip build environment, not imported by Tarsier at runtime. Their resolved versions are listed below; the RC lock will pin them.
+
+| Package | Version | Scope | Declared license | License text files |
+|---|---|---|---|---|
+| hatchling | 1.32.4 | build backend | MIT | [7f143a8127ad4873.txt](third_party_licenses/texts/7f143a8127ad4873.txt) |
+| pathspec | 1.1.1 | build backend | MPL-2.0 | [fab3dd6bdab226f1.txt](third_party_licenses/texts/fab3dd6bdab226f1.txt) |
+| tomlkit | 0.15.2 | build backend | MIT | [f2f9b460ba719da6.txt](third_party_licenses/texts/f2f9b460ba719da6.txt) |
+| trove-classifiers | 2026.9.21.13 | build backend | Apache-2.0 | [c71d239df91726fc.txt](third_party_licenses/texts/c71d239df91726fc.txt) |
+
+## npm locked packages
+
+| Package | Version | Scope | Declared license | License text files |
+|---|---|---|---|---|
+| @asamuzakjp/css-color | 3.2.0 | installed on Windows | MIT | [1156c4bf9aa3982f.txt](third_party_licenses/texts/1156c4bf9aa3982f.txt) |
+| @babel/code-frame | 7.29.7 | installed on Windows | MIT | [117da2af0d4ce0fe.txt](third_party_licenses/texts/117da2af0d4ce0fe.txt) |
+| @babel/helper-validator-identifier | 7.29.7 | installed on Windows | MIT | [117da2af0d4ce0fe.txt](third_party_licenses/texts/117da2af0d4ce0fe.txt) |
+| @babel/runtime | 7.29.10 | installed on Windows | MIT | [117da2af0d4ce0fe.txt](third_party_licenses/texts/117da2af0d4ce0fe.txt) |
+| @csstools/color-helpers | 5.1.0 | installed on Windows | MIT-0 | [947e32047a166cd0.txt](third_party_licenses/texts/947e32047a166cd0.txt) |
+| @csstools/css-calc | 2.1.4 | installed on Windows | MIT | [d00d032f517721b4.txt](third_party_licenses/texts/d00d032f517721b4.txt) |
+| @csstools/css-color-parser | 3.1.0 | installed on Windows | MIT | [d00d032f517721b4.txt](third_party_licenses/texts/d00d032f517721b4.txt) |
+| @csstools/css-parser-algorithms | 3.0.5 | installed on Windows | MIT | [d00d032f517721b4.txt](third_party_licenses/texts/d00d032f517721b4.txt) |
+| @csstools/css-tokenizer | 3.0.4 | installed on Windows | MIT | [d00d032f517721b4.txt](third_party_licenses/texts/d00d032f517721b4.txt) |
+| @fontsource-variable/inter | 5.3.0 | installed on Windows | OFL-1.1 | [3b0a5fca3d17942c.txt](third_party_licenses/texts/3b0a5fca3d17942c.txt) |
+| @fontsource-variable/newsreader | 5.3.0 | installed on Windows | OFL-1.1 | [26028ec4e13b6500.txt](third_party_licenses/texts/26028ec4e13b6500.txt) |
+| @jridgewell/resolve-uri | 3.1.2 | installed on Windows | MIT | [b8778b155bfde5a2.txt](third_party_licenses/texts/b8778b155bfde5a2.txt) |
+| @jridgewell/sourcemap-codec | 1.6.0 | installed on Windows | MIT | [769d154fbde32a91.txt](third_party_licenses/texts/769d154fbde32a91.txt) |
+| @jridgewell/trace-mapping | 0.3.31 | installed on Windows | MIT | [769d154fbde32a91.txt](third_party_licenses/texts/769d154fbde32a91.txt) |
+| @mapbox/jsonlint-lines-primitives | 2.0.3 | installed on Windows | MIT | [5dcae6b71018b545.txt](third_party_licenses/texts/5dcae6b71018b545.txt) |
+| @mapbox/point-geometry | 1.1.0 | installed on Windows | ISC | [0c0ede0036a425ff.txt](third_party_licenses/texts/0c0ede0036a425ff.txt) |
+| @mapbox/tiny-sdf | 2.3.0 | installed on Windows | BSD-2-Clause | [4f78063c6c0757df.txt](third_party_licenses/texts/4f78063c6c0757df.txt) |
+| @mapbox/unitbezier | 1.0.0 | installed on Windows | BSD-2-Clause | [f0dc305ad097eddb.txt](third_party_licenses/texts/f0dc305ad097eddb.txt) |
+| @mapbox/vector-tile | 3.0.0 | installed on Windows | BSD-3-Clause | [5b09a507df6f21d6.txt](third_party_licenses/texts/5b09a507df6f21d6.txt) |
+| @maplibre/geojson-vt | 6.1.2 | installed on Windows | ISC | [9eb90e1c920aeccc.txt](third_party_licenses/texts/9eb90e1c920aeccc.txt) |
+| @maplibre/maplibre-gl-style-spec | 26.4.4 | installed on Windows | ISC | [bfd4cb919eec574e.txt](third_party_licenses/texts/bfd4cb919eec574e.txt) |
+| @maplibre/mlt | 1.3.0 | installed on Windows | (MIT OR Apache-2.0) | [3c0a2cc8dfe44b85.txt](third_party_licenses/texts/3c0a2cc8dfe44b85.txt) |
+| @maplibre/vt-pbf | 4.3.2 | installed on Windows | MIT | [4c61c5753d4b021b.txt](third_party_licenses/texts/4c61c5753d4b021b.txt) |
+| @oxc-project/types | 0.153.0 | installed on Windows | MIT | [95ced5ecf1133fbf.txt](third_party_licenses/texts/95ced5ecf1133fbf.txt) |
+| @reduxjs/toolkit | 2.13.0 | installed on Windows | MIT | [49784961ec6c4941.txt](third_party_licenses/texts/49784961ec6c4941.txt) |
+| @rolldown/binding-android-arm-eabi | 1.2.13 | optional platform; absent from Windows install | MIT | [23ecfff35a5a2e80.txt](third_party_licenses/texts/23ecfff35a5a2e80.txt) |
+| @rolldown/binding-android-arm64 | 1.2.13 | optional platform; absent from Windows install | MIT | [23ecfff35a5a2e80.txt](third_party_licenses/texts/23ecfff35a5a2e80.txt) |
+| @rolldown/binding-darwin-arm64 | 1.2.13 | optional platform; absent from Windows install | MIT | [23ecfff35a5a2e80.txt](third_party_licenses/texts/23ecfff35a5a2e80.txt) |
+| @rolldown/binding-darwin-x64 | 1.2.13 | optional platform; absent from Windows install | MIT | [23ecfff35a5a2e80.txt](third_party_licenses/texts/23ecfff35a5a2e80.txt) |
+| @rolldown/binding-freebsd-x64 | 1.2.13 | optional platform; absent from Windows install | MIT | [23ecfff35a5a2e80.txt](third_party_licenses/texts/23ecfff35a5a2e80.txt) |
+| @rolldown/binding-linux-arm-gnueabihf | 1.2.13 | optional platform; absent from Windows install | MIT | [23ecfff35a5a2e80.txt](third_party_licenses/texts/23ecfff35a5a2e80.txt) |
+| @rolldown/binding-linux-arm64-gnu | 1.2.13 | optional platform; absent from Windows install | MIT | [23ecfff35a5a2e80.txt](third_party_licenses/texts/23ecfff35a5a2e80.txt) |
+| @rolldown/binding-linux-arm64-musl | 1.2.13 | optional platform; absent from Windows install | MIT | [23ecfff35a5a2e80.txt](third_party_licenses/texts/23ecfff35a5a2e80.txt) |
+| @rolldown/binding-linux-ppc64-gnu | 1.2.13 | optional platform; absent from Windows install | MIT | [23ecfff35a5a2e80.txt](third_party_licenses/texts/23ecfff35a5a2e80.txt) |
+| @rolldown/binding-linux-s390x-gnu | 1.2.13 | optional platform; absent from Windows install | MIT | [23ecfff35a5a2e80.txt](third_party_licenses/texts/23ecfff35a5a2e80.txt) |
+| @rolldown/binding-linux-x64-gnu | 1.2.13 | optional platform; absent from Windows install | MIT | [23ecfff35a5a2e80.txt](third_party_licenses/texts/23ecfff35a5a2e80.txt) |
+| @rolldown/binding-linux-x64-musl | 1.2.13 | optional platform; absent from Windows install | MIT | [23ecfff35a5a2e80.txt](third_party_licenses/texts/23ecfff35a5a2e80.txt) |
+| @rolldown/binding-openharmony-arm64 | 1.2.13 | optional platform; absent from Windows install | MIT | [23ecfff35a5a2e80.txt](third_party_licenses/texts/23ecfff35a5a2e80.txt) |
+| @rolldown/binding-win32-arm64-msvc | 1.2.13 | optional platform; absent from Windows install | MIT | [23ecfff35a5a2e80.txt](third_party_licenses/texts/23ecfff35a5a2e80.txt) |
+| @rolldown/binding-win32-x64-msvc | 1.2.13 | installed on Windows | MIT | [23ecfff35a5a2e80.txt](third_party_licenses/texts/23ecfff35a5a2e80.txt) |
+| @rolldown/pluginutils | 1.0.1 | installed on Windows | MIT | [e1919b3b98b8bf6c.txt](third_party_licenses/texts/e1919b3b98b8bf6c.txt) |
+| @standard-schema/spec | 1.1.0 | installed on Windows | MIT | [653b779005a3a4d6.txt](third_party_licenses/texts/653b779005a3a4d6.txt) |
+| @standard-schema/utils | 0.3.0 | installed on Windows | MIT | [9cf2166507311f42.txt](third_party_licenses/texts/9cf2166507311f42.txt) |
+| @testing-library/dom | 10.4.2 | installed on Windows | MIT | [bf8fd38056b7606d.txt](third_party_licenses/texts/bf8fd38056b7606d.txt) |
+| @testing-library/react | 16.3.3 | installed on Windows | MIT | [9680978280d50952.txt](third_party_licenses/texts/9680978280d50952.txt) |
+| @testing-library/user-event | 14.6.7 | installed on Windows | MIT | [b5a4028c49c48f82.txt](third_party_licenses/texts/b5a4028c49c48f82.txt) |
+| @types/aria-query | 5.0.4 | installed on Windows | MIT | [c2cfccb812fe4821.txt](third_party_licenses/texts/c2cfccb812fe4821.txt) |
+| @types/chai | 5.2.3 | installed on Windows | MIT | [c2cfccb812fe4821.txt](third_party_licenses/texts/c2cfccb812fe4821.txt) |
+| @types/d3-array | 3.2.2 | installed on Windows | MIT | [c2cfccb812fe4821.txt](third_party_licenses/texts/c2cfccb812fe4821.txt) |
+| @types/d3-color | 3.1.3 | installed on Windows | MIT | [c2cfccb812fe4821.txt](third_party_licenses/texts/c2cfccb812fe4821.txt) |
+| @types/d3-ease | 3.0.2 | installed on Windows | MIT | [c2cfccb812fe4821.txt](third_party_licenses/texts/c2cfccb812fe4821.txt) |
+| @types/d3-interpolate | 3.0.4 | installed on Windows | MIT | [c2cfccb812fe4821.txt](third_party_licenses/texts/c2cfccb812fe4821.txt) |
+| @types/d3-path | 3.1.1 | installed on Windows | MIT | [c2cfccb812fe4821.txt](third_party_licenses/texts/c2cfccb812fe4821.txt) |
+| @types/d3-scale | 4.0.9 | installed on Windows | MIT | [c2cfccb812fe4821.txt](third_party_licenses/texts/c2cfccb812fe4821.txt) |
+| @types/d3-shape | 3.2.0 | installed on Windows | MIT | [c2cfccb812fe4821.txt](third_party_licenses/texts/c2cfccb812fe4821.txt) |
+| @types/d3-time | 3.0.4 | installed on Windows | MIT | [c2cfccb812fe4821.txt](third_party_licenses/texts/c2cfccb812fe4821.txt) |
+| @types/d3-timer | 3.0.2 | installed on Windows | MIT | [c2cfccb812fe4821.txt](third_party_licenses/texts/c2cfccb812fe4821.txt) |
+| @types/deep-eql | 4.0.2 | installed on Windows | MIT | [c2cfccb812fe4821.txt](third_party_licenses/texts/c2cfccb812fe4821.txt) |
+| @types/estree | 1.0.9 | installed on Windows | MIT | [c2cfccb812fe4821.txt](third_party_licenses/texts/c2cfccb812fe4821.txt) |
+| @types/geojson | 7946.0.16 | installed on Windows | MIT | [c2cfccb812fe4821.txt](third_party_licenses/texts/c2cfccb812fe4821.txt) |
+| @types/prop-types | 15.7.15 | installed on Windows | MIT | [c2cfccb812fe4821.txt](third_party_licenses/texts/c2cfccb812fe4821.txt) |
+| @types/react | 18.3.31 | installed on Windows | MIT | [c2cfccb812fe4821.txt](third_party_licenses/texts/c2cfccb812fe4821.txt) |
+| @types/react-dom | 18.3.7 | installed on Windows | MIT | [c2cfccb812fe4821.txt](third_party_licenses/texts/c2cfccb812fe4821.txt) |
+| @types/use-sync-external-store | 0.0.6 | installed on Windows | MIT | [c2cfccb812fe4821.txt](third_party_licenses/texts/c2cfccb812fe4821.txt) |
+| @vitejs/plugin-react | 6.1.2 | installed on Windows | MIT | [29b68325fe026047.txt](third_party_licenses/texts/29b68325fe026047.txt) |
+| @vitest/mocker | 5.0.3 | installed on Windows | MIT | [04575fc5bfae19a9.txt](third_party_licenses/texts/04575fc5bfae19a9.txt) |
+| @vitest/spy | 5.0.3 | installed on Windows | MIT | [04575fc5bfae19a9.txt](third_party_licenses/texts/04575fc5bfae19a9.txt) |
+| agent-base | 7.1.4 | installed on Windows | MIT | [8d8c55319c7729d5.txt](third_party_licenses/texts/8d8c55319c7729d5.txt) |
+| ansi-regex | 5.0.1 | installed on Windows | MIT | [48da2f39e100d408.txt](third_party_licenses/texts/48da2f39e100d408.txt) |
+| ansi-styles | 5.2.0 | installed on Windows | MIT | [48da2f39e100d408.txt](third_party_licenses/texts/48da2f39e100d408.txt) |
+| aria-query | 5.3.0 | installed on Windows | Apache-2.0 | [c8df456c7ccba74b.txt](third_party_licenses/texts/c8df456c7ccba74b.txt) |
+| assertion-error | 2.0.1 | installed on Windows | MIT | [2130216d5ab4c021.txt](third_party_licenses/texts/2130216d5ab4c021.txt) |
+| asynckit | 0.4.0 | installed on Windows | MIT | [1953150d5d4b10c7.txt](third_party_licenses/texts/1953150d5d4b10c7.txt) |
+| bidi-js | 1.1.0 | installed on Windows | MIT | [49d4d143fed599de.txt](third_party_licenses/texts/49d4d143fed599de.txt) |
+| call-bind-apply-helpers | 1.0.2 | installed on Windows | MIT | [5e325595b4ea8cfe.txt](third_party_licenses/texts/5e325595b4ea8cfe.txt) |
+| chai | 6.3.0 | installed on Windows | MIT | [b181da80336ff9dd.txt](third_party_licenses/texts/b181da80336ff9dd.txt) |
+| clsx | 2.1.1 | installed on Windows | MIT | [9a9edad7baae5262.txt](third_party_licenses/texts/9a9edad7baae5262.txt) |
+| combined-stream | 1.0.8 | installed on Windows | MIT | [47eb8ca82c798246.txt](third_party_licenses/texts/47eb8ca82c798246.txt) |
+| cookie | 1.1.1 | installed on Windows | MIT | [c02110eedc16c711.txt](third_party_licenses/texts/c02110eedc16c711.txt) |
+| cssstyle | 4.6.0 | installed on Windows | MIT | [768faff9f6908c78.txt](third_party_licenses/texts/768faff9f6908c78.txt) |
+| cssstyle/node_modules/rrweb-cssom | 0.8.0 | installed on Windows | MIT | [e539937c489c4928.txt](third_party_licenses/texts/e539937c489c4928.txt) |
+| csstype | 3.2.3 | installed on Windows | MIT | [11d55bd4541c75ee.txt](third_party_licenses/texts/11d55bd4541c75ee.txt) |
+| cytoscape | 3.34.3 | installed on Windows | MIT | [eb319c6e6f233607.txt](third_party_licenses/texts/eb319c6e6f233607.txt), [4a5a644717fc90d6.txt](third_party_licenses/texts/4a5a644717fc90d6.txt) |
+| d3-array | 3.2.4 | installed on Windows | ISC | [3e6849627f74ff73.txt](third_party_licenses/texts/3e6849627f74ff73.txt) |
+| d3-color | 3.1.0 | installed on Windows | ISC | [faa682e3e430941f.txt](third_party_licenses/texts/faa682e3e430941f.txt) |
+| d3-ease | 3.0.1 | installed on Windows | BSD-3-Clause | [b989d9085148d21f.txt](third_party_licenses/texts/b989d9085148d21f.txt) |
+| d3-format | 3.1.2 | installed on Windows | ISC | [2a6d2d5f32ba0b75.txt](third_party_licenses/texts/2a6d2d5f32ba0b75.txt) |
+| d3-interpolate | 3.0.1 | installed on Windows | ISC | [e008c5e25a6be382.txt](third_party_licenses/texts/e008c5e25a6be382.txt) |
+| d3-path | 3.1.0 | installed on Windows | ISC | [a09b0d6d76e768fc.txt](third_party_licenses/texts/a09b0d6d76e768fc.txt) |
+| d3-scale | 4.0.2 | installed on Windows | ISC | [e008c5e25a6be382.txt](third_party_licenses/texts/e008c5e25a6be382.txt) |
+| d3-shape | 3.2.0 | installed on Windows | ISC | [faa682e3e430941f.txt](third_party_licenses/texts/faa682e3e430941f.txt) |
+| d3-time | 3.1.0 | installed on Windows | ISC | [faa682e3e430941f.txt](third_party_licenses/texts/faa682e3e430941f.txt) |
+| d3-time-format | 4.1.0 | installed on Windows | ISC | [e008c5e25a6be382.txt](third_party_licenses/texts/e008c5e25a6be382.txt) |
+| d3-timer | 3.0.1 | installed on Windows | ISC | [e008c5e25a6be382.txt](third_party_licenses/texts/e008c5e25a6be382.txt) |
+| data-urls | 5.0.0 | installed on Windows | MIT | [528eec83cb836a0a.txt](third_party_licenses/texts/528eec83cb836a0a.txt) |
+| debug | 4.4.3 | installed on Windows | MIT | [3a61c6c96caf5c1d.txt](third_party_licenses/texts/3a61c6c96caf5c1d.txt) |
+| decimal.js | 10.6.0 | installed on Windows | MIT | [3108b546bcff5d34.txt](third_party_licenses/texts/3108b546bcff5d34.txt) |
+| decimal.js-light | 2.5.1 | installed on Windows | MIT | [fc0397fbd5c128be.txt](third_party_licenses/texts/fc0397fbd5c128be.txt) |
+| delayed-stream | 1.0.0 | installed on Windows | MIT | [47eb8ca82c798246.txt](third_party_licenses/texts/47eb8ca82c798246.txt) |
+| dequal | 2.0.3 | installed on Windows | MIT | [306fa513e39b23a6.txt](third_party_licenses/texts/306fa513e39b23a6.txt) |
+| detect-libc | 2.1.2 | installed on Windows | Apache-2.0 | [b40930bbcf80744c.txt](third_party_licenses/texts/b40930bbcf80744c.txt) |
+| dom-accessibility-api | 0.5.16 | installed on Windows | MIT | [0ffe67fe630169de.txt](third_party_licenses/texts/0ffe67fe630169de.txt) |
+| dunder-proto | 1.0.1 | installed on Windows | MIT | [2b770a704c15de23.txt](third_party_licenses/texts/2b770a704c15de23.txt) |
+| earcut | 3.2.4 | installed on Windows | ISC | [0b348fff56384b43.txt](third_party_licenses/texts/0b348fff56384b43.txt) |
+| entities | 6.0.1 | installed on Windows | BSD-2-Clause | [cb992345949ccd6e.txt](third_party_licenses/texts/cb992345949ccd6e.txt) |
+| es-define-property | 1.0.1 | installed on Windows | MIT | [5e325595b4ea8cfe.txt](third_party_licenses/texts/5e325595b4ea8cfe.txt) |
+| es-errors | 1.3.0 | installed on Windows | MIT | [5e325595b4ea8cfe.txt](third_party_licenses/texts/5e325595b4ea8cfe.txt) |
+| es-module-lexer | 2.3.2 | installed on Windows | MIT | [8a4b6c44eebfb026.txt](third_party_licenses/texts/8a4b6c44eebfb026.txt) |
+| es-object-atoms | 1.1.2 | installed on Windows | MIT | [5e325595b4ea8cfe.txt](third_party_licenses/texts/5e325595b4ea8cfe.txt) |
+| es-set-tostringtag | 2.1.0 | installed on Windows | MIT | [1a3aeb1f1398bd69.txt](third_party_licenses/texts/1a3aeb1f1398bd69.txt) |
+| es-toolkit | 1.52.0 | installed on Windows | MIT | [51f3674294d988d8.txt](third_party_licenses/texts/51f3674294d988d8.txt), [11ee5e3bce9b0a4d.txt](third_party_licenses/texts/11ee5e3bce9b0a4d.txt) |
+| estree-walker | 3.0.3 | installed on Windows | MIT | [8a6dcbabe7179f9c.txt](third_party_licenses/texts/8a6dcbabe7179f9c.txt) |
+| eventemitter3 | 5.0.4 | installed on Windows | MIT | [3aecc12b1cb28832.txt](third_party_licenses/texts/3aecc12b1cb28832.txt) |
+| expect-type | 1.4.0 | installed on Windows | Apache-2.0 | [7c6cc83c84eaa249.txt](third_party_licenses/texts/7c6cc83c84eaa249.txt) |
+| fdir | 6.5.0 | installed on Windows | MIT | [9a39f2aadab11a36.txt](third_party_licenses/texts/9a39f2aadab11a36.txt) |
+| form-data | 4.0.6 | installed on Windows | MIT | [e5b780d4f38d1d33.txt](third_party_licenses/texts/e5b780d4f38d1d33.txt) |
+| fsevents | 2.3.3 | optional platform; absent from Windows install | MIT | [2a8a5d6197bb97a0.txt](third_party_licenses/texts/2a8a5d6197bb97a0.txt) |
+| function-bind | 1.1.2 | installed on Windows | MIT | [773e131a76847260.txt](third_party_licenses/texts/773e131a76847260.txt) |
+| get-intrinsic | 1.3.0 | installed on Windows | MIT | [39c5ec504cf6bd5c.txt](third_party_licenses/texts/39c5ec504cf6bd5c.txt) |
+| get-proto | 1.0.1 | installed on Windows | MIT | [be46ce1e3b0479af.txt](third_party_licenses/texts/be46ce1e3b0479af.txt) |
+| gl-matrix | 3.4.4 | installed on Windows | MIT | [af62d31a0cdc1bf9.txt](third_party_licenses/texts/af62d31a0cdc1bf9.txt) |
+| gopd | 1.2.0 | installed on Windows | MIT | [d90bf0a089da4cf4.txt](third_party_licenses/texts/d90bf0a089da4cf4.txt) |
+| has-symbols | 1.1.0 | installed on Windows | MIT | [206c1adcf206dc00.txt](third_party_licenses/texts/206c1adcf206dc00.txt) |
+| has-tostringtag | 1.0.2 | installed on Windows | MIT | [e2560e002e132815.txt](third_party_licenses/texts/e2560e002e132815.txt) |
+| hasown | 2.0.4 | installed on Windows | MIT | [bf9b0d665be2a689.txt](third_party_licenses/texts/bf9b0d665be2a689.txt) |
+| html-encoding-sniffer | 4.0.0 | installed on Windows | MIT | [528eec83cb836a0a.txt](third_party_licenses/texts/528eec83cb836a0a.txt) |
+| http-proxy-agent | 7.0.2 | installed on Windows | MIT | [71368fd0f5b41291.txt](third_party_licenses/texts/71368fd0f5b41291.txt) |
+| https-proxy-agent | 7.0.6 | installed on Windows | MIT | [8d8c55319c7729d5.txt](third_party_licenses/texts/8d8c55319c7729d5.txt) |
+| iconv-lite | 0.6.3 | installed on Windows | MIT | [ac779f7314c74f23.txt](third_party_licenses/texts/ac779f7314c74f23.txt) |
+| immer | 11.1.21 | installed on Windows | MIT | [99cf22f6960a6fe2.txt](third_party_licenses/texts/99cf22f6960a6fe2.txt) |
+| internmap | 2.0.3 | installed on Windows | ISC | [9ea8903938dab5f1.txt](third_party_licenses/texts/9ea8903938dab5f1.txt) |
+| is-potential-custom-element-name | 1.0.1 | installed on Windows | MIT | [483acb265f182907.txt](third_party_licenses/texts/483acb265f182907.txt) |
+| js-tokens | 4.0.0 | installed on Windows | MIT | [2213d91c606205c7.txt](third_party_licenses/texts/2213d91c606205c7.txt) |
+| jsdom | 25.0.1 | installed on Windows | MIT | [242d37e7cab25cba.txt](third_party_licenses/texts/242d37e7cab25cba.txt) |
+| json-stringify-pretty-compact | 4.0.0 | installed on Windows | MIT | [2d51145876dda3dd.txt](third_party_licenses/texts/2d51145876dda3dd.txt) |
+| kdbush | 4.1.0 | installed on Windows | ISC | [0aba693a2c2e5b1b.txt](third_party_licenses/texts/0aba693a2c2e5b1b.txt) |
+| lightningcss | 1.33.0 | installed on Windows | MPL-2.0 | [5eba353fe5076ac3.txt](third_party_licenses/texts/5eba353fe5076ac3.txt) |
+| lightningcss-android-arm64 | 1.33.0 | optional platform; absent from Windows install | MPL-2.0 | [5eba353fe5076ac3.txt](third_party_licenses/texts/5eba353fe5076ac3.txt) |
+| lightningcss-darwin-arm64 | 1.33.0 | optional platform; absent from Windows install | MPL-2.0 | [5eba353fe5076ac3.txt](third_party_licenses/texts/5eba353fe5076ac3.txt) |
+| lightningcss-darwin-x64 | 1.33.0 | optional platform; absent from Windows install | MPL-2.0 | [5eba353fe5076ac3.txt](third_party_licenses/texts/5eba353fe5076ac3.txt) |
+| lightningcss-freebsd-x64 | 1.33.0 | optional platform; absent from Windows install | MPL-2.0 | [5eba353fe5076ac3.txt](third_party_licenses/texts/5eba353fe5076ac3.txt) |
+| lightningcss-linux-arm-gnueabihf | 1.33.0 | optional platform; absent from Windows install | MPL-2.0 | [5eba353fe5076ac3.txt](third_party_licenses/texts/5eba353fe5076ac3.txt) |
+| lightningcss-linux-arm64-gnu | 1.33.0 | optional platform; absent from Windows install | MPL-2.0 | [5eba353fe5076ac3.txt](third_party_licenses/texts/5eba353fe5076ac3.txt) |
+| lightningcss-linux-arm64-musl | 1.33.0 | optional platform; absent from Windows install | MPL-2.0 | [5eba353fe5076ac3.txt](third_party_licenses/texts/5eba353fe5076ac3.txt) |
+| lightningcss-linux-x64-gnu | 1.33.0 | optional platform; absent from Windows install | MPL-2.0 | [5eba353fe5076ac3.txt](third_party_licenses/texts/5eba353fe5076ac3.txt) |
+| lightningcss-linux-x64-musl | 1.33.0 | optional platform; absent from Windows install | MPL-2.0 | [5eba353fe5076ac3.txt](third_party_licenses/texts/5eba353fe5076ac3.txt) |
+| lightningcss-win32-arm64-msvc | 1.33.0 | optional platform; absent from Windows install | MPL-2.0 | [5eba353fe5076ac3.txt](third_party_licenses/texts/5eba353fe5076ac3.txt) |
+| lightningcss-win32-x64-msvc | 1.33.0 | installed on Windows | MPL-2.0 | [5eba353fe5076ac3.txt](third_party_licenses/texts/5eba353fe5076ac3.txt) |
+| loose-envify | 1.4.0 | installed on Windows | MIT | [4eb7543b08d955a6.txt](third_party_licenses/texts/4eb7543b08d955a6.txt) |
+| lru-cache | 10.4.3 | installed on Windows | ISC | [451ec07eeb9c4e1b.txt](third_party_licenses/texts/451ec07eeb9c4e1b.txt) |
+| lz-string | 1.5.0 | installed on Windows | MIT | [433fc9dfe659dbfb.txt](third_party_licenses/texts/433fc9dfe659dbfb.txt) |
+| magic-string | 1.4.3 | installed on Windows | MIT | [1cbe51b907662f6c.txt](third_party_licenses/texts/1cbe51b907662f6c.txt) |
+| maplibre-gl | 6.13.0 | installed on Windows | BSD-3-Clause | [ee5fc05a0677eaf6.txt](third_party_licenses/texts/ee5fc05a0677eaf6.txt) |
+| math-intrinsics | 1.1.0 | installed on Windows | MIT | [2b770a704c15de23.txt](third_party_licenses/texts/2b770a704c15de23.txt) |
+| mime-db | 1.52.0 | installed on Windows | MIT | [cc1dfd4dafa27271.txt](third_party_licenses/texts/cc1dfd4dafa27271.txt) |
+| mime-types | 2.1.35 | installed on Windows | MIT | [71f83c4c0621102a.txt](third_party_licenses/texts/71f83c4c0621102a.txt) |
+| minimist | 1.2.8 | installed on Windows | MIT | [435a6722c786b0a5.txt](third_party_licenses/texts/435a6722c786b0a5.txt) |
+| ms | 2.1.3 | installed on Windows | MIT | [1662fae9b5314d11.txt](third_party_licenses/texts/1662fae9b5314d11.txt) |
+| murmurhash-js | 1.0.0 | installed on Windows | MIT | [0439b967686bd53a.txt](third_party_licenses/texts/0439b967686bd53a.txt) |
+| nanoid | 3.3.20 | installed on Windows | MIT | [da4db1480d9beea3.txt](third_party_licenses/texts/da4db1480d9beea3.txt) |
+| nwsapi | 2.2.28 | installed on Windows | MIT | [2aebdf8ae67777cc.txt](third_party_licenses/texts/2aebdf8ae67777cc.txt) |
+| obug | 2.2.1 | installed on Windows | MIT | [ee48679d379ca6b4.txt](third_party_licenses/texts/ee48679d379ca6b4.txt) |
+| parse5 | 7.3.0 | installed on Windows | MIT | [8c535800331e1e44.txt](third_party_licenses/texts/8c535800331e1e44.txt) |
+| pbf | 5.1.2 | installed on Windows | BSD-3-Clause | [fdf1d5279107d760.txt](third_party_licenses/texts/fdf1d5279107d760.txt) |
+| picocolors | 1.1.1 | installed on Windows | ISC | [6582629e29794668.txt](third_party_licenses/texts/6582629e29794668.txt) |
+| picomatch | 4.0.7 | installed on Windows | MIT | [d0cd141b0c322fde.txt](third_party_licenses/texts/d0cd141b0c322fde.txt) |
+| postcss | 8.5.29 | installed on Windows | MIT | [5be1f3465bba68a6.txt](third_party_licenses/texts/5be1f3465bba68a6.txt) |
+| potpack | 2.1.0 | installed on Windows | ISC | [cfec0482fb785fe2.txt](third_party_licenses/texts/cfec0482fb785fe2.txt) |
+| pretty-format | 27.5.1 | installed on Windows | MIT | [52412d7bc7ce4157.txt](third_party_licenses/texts/52412d7bc7ce4157.txt) |
+| protocol-buffers-schema | 3.6.1 | installed on Windows | MIT | [3fe8d55a98dbf260.txt](third_party_licenses/texts/3fe8d55a98dbf260.txt) |
+| punycode | 2.3.1 | installed on Windows | MIT | [483acb265f182907.txt](third_party_licenses/texts/483acb265f182907.txt) |
+| quickselect | 3.0.0 | installed on Windows | ISC | [238ddb00e12a420a.txt](third_party_licenses/texts/238ddb00e12a420a.txt) |
+| react | 18.3.1 | installed on Windows | MIT | [52412d7bc7ce4157.txt](third_party_licenses/texts/52412d7bc7ce4157.txt) |
+| react-dom | 18.3.1 | installed on Windows | MIT | [52412d7bc7ce4157.txt](third_party_licenses/texts/52412d7bc7ce4157.txt) |
+| react-is | 17.0.2 | installed on Windows | MIT | [52412d7bc7ce4157.txt](third_party_licenses/texts/52412d7bc7ce4157.txt) |
+| react-redux | 9.3.0 | installed on Windows | MIT | [f2da73c752c6b876.txt](third_party_licenses/texts/f2da73c752c6b876.txt) |
+| react-router | 7.18.4 | installed on Windows | MIT | [77c9ee6a9c5d5782.txt](third_party_licenses/texts/77c9ee6a9c5d5782.txt) |
+| react-router-dom | 7.18.4 | installed on Windows | MIT | [77c9ee6a9c5d5782.txt](third_party_licenses/texts/77c9ee6a9c5d5782.txt) |
+| recharts | 3.10.1 | installed on Windows | MIT | [2d3aa48a8d1d3b93.txt](third_party_licenses/texts/2d3aa48a8d1d3b93.txt) |
+| redux | 5.0.1 | installed on Windows | MIT | [f2da73c752c6b876.txt](third_party_licenses/texts/f2da73c752c6b876.txt) |
+| redux-thunk | 3.1.0 | installed on Windows | MIT | [635da794c92d278f.txt](third_party_licenses/texts/635da794c92d278f.txt) |
+| require-from-string | 2.0.2 | installed on Windows | MIT | [6ee0feb1f6ef996f.txt](third_party_licenses/texts/6ee0feb1f6ef996f.txt) |
+| reselect | 5.2.0 | installed on Windows | MIT | [e98047a5dee068b3.txt](third_party_licenses/texts/e98047a5dee068b3.txt) |
+| resolve-protobuf-schema | 2.1.0 | installed on Windows | MIT | [c0993ca46cd47c09.txt](third_party_licenses/texts/c0993ca46cd47c09.txt) |
+| rolldown | 1.2.13 | installed on Windows | MIT | [23ecfff35a5a2e80.txt](third_party_licenses/texts/23ecfff35a5a2e80.txt) |
+| rrweb-cssom | 0.7.1 | installed on Windows | MIT | [e539937c489c4928.txt](third_party_licenses/texts/e539937c489c4928.txt) |
+| safer-buffer | 2.1.2 | installed on Windows | MIT | [4bc935e71be198c6.txt](third_party_licenses/texts/4bc935e71be198c6.txt) |
+| saxes | 6.0.0 | installed on Windows | ISC | [0fac2374380621b2.txt](third_party_licenses/texts/0fac2374380621b2.txt) |
+| scheduler | 0.23.2 | installed on Windows | MIT | [52412d7bc7ce4157.txt](third_party_licenses/texts/52412d7bc7ce4157.txt) |
+| set-cookie-parser | 2.7.2 | installed on Windows | MIT | [c5c6c5183a789d12.txt](third_party_licenses/texts/c5c6c5183a789d12.txt) |
+| source-map-js | 1.2.2 | installed on Windows | BSD-3-Clause | [6cb0631f71c77497.txt](third_party_licenses/texts/6cb0631f71c77497.txt) |
+| std-env | 4.3.0 | installed on Windows | MIT | [a6f36438e46fb911.txt](third_party_licenses/texts/a6f36438e46fb911.txt) |
+| symbol-tree | 3.2.4 | installed on Windows | MIT | [9ea1eccdabe46976.txt](third_party_licenses/texts/9ea1eccdabe46976.txt) |
+| tiny-invariant | 1.3.3 | installed on Windows | MIT | [b1c501095de70182.txt](third_party_licenses/texts/b1c501095de70182.txt) |
+| tinybench | 6.2.2 | installed on Windows | MIT | [cebc084d54e6dd99.txt](third_party_licenses/texts/cebc084d54e6dd99.txt) |
+| tinyexec | 1.3.1 | installed on Windows | MIT | [f95f668fe64081dd.txt](third_party_licenses/texts/f95f668fe64081dd.txt) |
+| tinyglobby | 0.2.17 | installed on Windows | MIT | [22c68811e174cbbf.txt](third_party_licenses/texts/22c68811e174cbbf.txt) |
+| tinyqueue | 3.0.0 | installed on Windows | ISC | [780453e05abdc223.txt](third_party_licenses/texts/780453e05abdc223.txt) |
+| tldts | 6.1.86 | installed on Windows | MIT | [c64182d48160db94.txt](third_party_licenses/texts/c64182d48160db94.txt) |
+| tldts-core | 6.1.86 | installed on Windows | MIT | [c64182d48160db94.txt](third_party_licenses/texts/c64182d48160db94.txt) |
+| tough-cookie | 5.1.2 | installed on Windows | BSD-3-Clause | [22ec6791c91ba42c.txt](third_party_licenses/texts/22ec6791c91ba42c.txt) |
+| tr46 | 5.1.1 | installed on Windows | MIT | [499d6d466d064e04.txt](third_party_licenses/texts/499d6d466d064e04.txt) |
+| typescript | 5.9.3 | installed on Windows | Apache-2.0 | [a7d00bfd54525bc6.txt](third_party_licenses/texts/a7d00bfd54525bc6.txt) |
+| use-sync-external-store | 1.7.0 | installed on Windows | MIT | [da6d3703ed11cbe4.txt](third_party_licenses/texts/da6d3703ed11cbe4.txt) |
+| victory-vendor | 37.3.6 | installed on Windows | MIT AND ISC; vendored BSD-3-Clause too (upstream metadata incomplete: legal review) | [34dee5fd5e5cc756.txt](third_party_licenses/texts/34dee5fd5e5cc756.txt), [faa682e3e430941f.txt](third_party_licenses/texts/faa682e3e430941f.txt), [faa682e3e430941f.txt](third_party_licenses/texts/faa682e3e430941f.txt), [b989d9085148d21f.txt](third_party_licenses/texts/b989d9085148d21f.txt), [e008c5e25a6be382.txt](third_party_licenses/texts/e008c5e25a6be382.txt), [e008c5e25a6be382.txt](third_party_licenses/texts/e008c5e25a6be382.txt), [0ab21426fad1e8b8.txt](third_party_licenses/texts/0ab21426fad1e8b8.txt), [e008c5e25a6be382.txt](third_party_licenses/texts/e008c5e25a6be382.txt), [e008c5e25a6be382.txt](third_party_licenses/texts/e008c5e25a6be382.txt), [e008c5e25a6be382.txt](third_party_licenses/texts/e008c5e25a6be382.txt), [e008c5e25a6be382.txt](third_party_licenses/texts/e008c5e25a6be382.txt), [e008c5e25a6be382.txt](third_party_licenses/texts/e008c5e25a6be382.txt), [ad6cf57648385d6c.txt](third_party_licenses/texts/ad6cf57648385d6c.txt), [9ea8903938dab5f1.txt](third_party_licenses/texts/9ea8903938dab5f1.txt) |
+| vite | 8.3.4 | installed on Windows | MIT | [a47172e44a86a7e2.txt](third_party_licenses/texts/a47172e44a86a7e2.txt) |
+| vitest | 5.0.3 | installed on Windows | MIT | [c8f14eea9df88b94.txt](third_party_licenses/texts/c8f14eea9df88b94.txt) |
+| w3c-xmlserializer | 5.0.0 | installed on Windows | MIT | [ab654de803cdaa9e.txt](third_party_licenses/texts/ab654de803cdaa9e.txt) |
+| webidl-conversions | 7.0.0 | installed on Windows | BSD-2-Clause | [a889cc4dbee2ae17.txt](third_party_licenses/texts/a889cc4dbee2ae17.txt) |
+| whatwg-encoding | 3.1.1 | installed on Windows | MIT | [528eec83cb836a0a.txt](third_party_licenses/texts/528eec83cb836a0a.txt) |
+| whatwg-mimetype | 4.0.0 | installed on Windows | MIT | [528eec83cb836a0a.txt](third_party_licenses/texts/528eec83cb836a0a.txt) |
+| whatwg-url | 14.2.0 | installed on Windows | MIT | [db480f236292a093.txt](third_party_licenses/texts/db480f236292a093.txt) |
+| why-is-node-running | 3.2.1 | installed on Windows | MIT | [6a134e51aa31496c.txt](third_party_licenses/texts/6a134e51aa31496c.txt) |
+| ws | 8.22.0 | installed on Windows | MIT | [2b29dcfe0d6471f7.txt](third_party_licenses/texts/2b29dcfe0d6471f7.txt) |
+| xml-name-validator | 5.0.0 | installed on Windows | Apache-2.0 | [a6cba85bc92e0cff.txt](third_party_licenses/texts/a6cba85bc92e0cff.txt) |
+| xmlchars | 2.2.0 | installed on Windows | MIT | [45d196313c2647d3.txt](third_party_licenses/texts/45d196313c2647d3.txt) |
+
+The linked files retain the complete license text and notices supplied by the installed distributions. Where a published package omitted a license file, the linked text was taken from its embedded README or upstream repository. The victory-vendor package also includes its nested vendored notices; its declared license expression omits BSD-3-Clause, so legal review is required. Optional non-Windows packages are lockfile entries, not present in the tested Windows bundle.

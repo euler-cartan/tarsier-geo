@@ -1,0 +1,78 @@
+[build-system]
+requires = ["hatchling==1.32.4"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tarsier-geo"
+version = "1.0.0rc1"
+description = "Health, statistics, quality, and change history dashboards for geospatial databases."
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.11"
+authors = [{ name = "Tarsier Contributors" }]
+keywords = ["gis", "geospatial", "postgis", "data-quality", "monitoring"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Web Environment",
+    "Framework :: FastAPI",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Database",
+    "Topic :: Scientific/Engineering :: GIS",
+]
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "sqlalchemy>=2.0",
+    "psycopg[binary]>=3.2",
+    "keyring>=25.0",
+    "cryptography>=43.0",
+    "geopandas>=1.0",
+    "pandas>=2.2",
+    "shapely>=2.0",
+    "pyogrio>=0.9",
+    "rasterio>=1.3",
+    "requests>=2.32",
+    "oracledb>=2.4",
+    "pymssql>=2.3",
+    "apscheduler>=3.10,<4",
+    "duckdb>=1.4,<2",
+    "pyarrow>=20",
+    # Knowledge graph (TAD 3). Pinned: Kuzu is archived, 0.11.3 is final. Its wheels stop at
+    # Python 3.13, so on newer Pythons the graph feature reports itself unavailable.
+    "kuzu==0.11.3; python_version < '3.14'",
+]
+
+[project.urls]
+Homepage = "https://github.com/euler-cartan/tarsier-geo"
+Documentation = "https://github.com/euler-cartan/tarsier-geo#readme"
+Issues = "https://github.com/euler-cartan/tarsier-geo/issues"
+
+[project.scripts]
+tarsier-geo = "tarsier.cli.main:main"
+
+# The built web interface is not in Git, but must be inside the sdist and the wheel.
+[tool.hatch.build]
+artifacts = ["frontend/dist"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["tarsier"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"frontend/dist" = "tarsier/web/static"
+"LICENSE" = "tarsier/web/about/LICENSE"
+"NOTICE" = "tarsier/web/about/NOTICE"
+"THIRD_PARTY_NOTICES" = "tarsier/web/about/THIRD_PARTY_NOTICES"
+"third_party_licenses" = "tarsier/web/about/third_party_licenses"
+"docs/PRD.md" = "tarsier/web/about/docs/PRD.md"
+"docs/TAD.md" = "tarsier/web/about/docs/TAD.md"
+"docs/FSD.md" = "tarsier/web/about/docs/FSD.md"
+"docs/DVS.md" = "tarsier/web/about/docs/DVS.md"
+"docs/FTL.md" = "tarsier/web/about/docs/FTL.md"
+"docs/WFD.md" = "tarsier/web/about/docs/WFD.md"

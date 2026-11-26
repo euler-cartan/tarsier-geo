@@ -1,0 +1,7 @@
+item_code,category,stock_qty,warehouse,supplier
+A01,Notebook,3,East,Atlas
+A02,Pen,12,West,Beacon
+A03,Folder,,East,Atlas
+A04,Marker,4,North,
+A05,Notebook,7,West,Beacon
+A06,Pen,12,East,Atlas

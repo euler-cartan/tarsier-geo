@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+.venv/
+.venv311/
+.venv314/
+venv/
+.pytest_cache/
+dist/
+build/
+
+# Node / frontend
+node_modules/
+frontend/dist/
+*.tsbuildinfo
+frontend/public/maplibre-gl-worker.mjs
+
+# Tarsier's own runtime state (never user data â€” TAD Â§5)
+*.sqlite3
+.tarsier/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Private working documents: never commit or package these
+BUILD_REPORT.md
+DATA_SCREEN_FIXES.md
+UI_REFINEMENTS.md
+WORKFLOW_REFINEMENTS.md
+v2_DESIGN.md
+DESIGN.md
+QA_REPORT.md
+status-report.md
+example-database-guide.md
+RELEASE_STEPS.md
+proposals/
+claude/
