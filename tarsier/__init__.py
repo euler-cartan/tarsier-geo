@@ -1,6 +1,6 @@
 import os
 
-__version__ = "1.0.0rc1"
+__version__ = "1.0.0rc2"
 
 # GIS admins' machines (Tarsier's own target users) very often have other
 # geospatial software installed  -  QGIS, ArcGIS, a separate PostGIS install  -

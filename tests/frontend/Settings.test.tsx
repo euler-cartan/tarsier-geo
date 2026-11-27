@@ -24,13 +24,13 @@ describe("Settings AI section", () => {
       if (url === "/api/settings/ai") return {...UNCONFIGURED, provider: "external", endpoint_url: "https://openrouter.ai/api/v1/chat/completions", model: "saved-model", configured: true};
       if (url.includes("/ai/models")) return {models: []};
       if (url === "/api/connections") return [];
-      if (url.includes("/api/about")) return {version: "1.0.0-rc1", license: "Apache-2.0", links: []};
+      if (url.includes("/api/about")) return {version: "1.0.0-rc2", license: "Apache-2.0", links: []};
       return {};
     }}));
     vi.stubGlobal("fetch", fetcher);
     render(<MemoryRouter><Settings /></MemoryRouter>);
     expect(await screen.findByText("Select Refresh models to load OpenRouter models.")).toBeDefined();
-    expect(await screen.findByText("Version 1.0.0-rc1")).toBeDefined();
+    expect(await screen.findByText("Version 1.0.0-rc2")).toBeDefined();
     await new Promise(resolve => setTimeout(resolve, 400));
     expect(fetcher.mock.calls.some(([url]) => url.includes("/ai/models"))).toBe(false);
     await userEvent.click(screen.getByRole("button", {name: "Refresh models"}));

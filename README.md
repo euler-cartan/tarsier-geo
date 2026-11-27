@@ -134,7 +134,7 @@ snapshots and cached results contain source data even though credentials are exc
 
 ## Known limits
 
-v1.0.0-rc1 is a release candidate. Windows and PostGIS are the best-tested combination. Oracle, SQL Server, and GeoServer have had less testing; ArcGIS was tested only against a mock. Sample results are labelled and are not full checks.
+v1.0.0-rc2 is a release candidate. Windows and PostGIS are the best-tested combination. Oracle, SQL Server, and GeoServer have had less testing; ArcGIS was tested only against a mock. Sample results are labelled and are not full checks.
 
 Plain-English questions are answered by a model you configure; answer accuracy depends on that model. Review drafts before saving them.
 
@@ -142,7 +142,7 @@ Full statistics are available only for tables up to 20,000 rows in this release;
 
 Alerts to Microsoft Teams have not yet been tested against real Teams. "Layer not updated" (freshness) alerts send one message per layer. Schedules run in UTC. Scheduled checks need Tarsier to be running, and use samples on large tables: they are not the same as **Run full check**.
 
-Do not use rc1 as the only safeguard for critical decisions; report problems through GitHub Issues, and security problems privately.
+Do not use rc2 as the only safeguard for critical decisions; report problems through GitHub Issues, and security problems privately.
 
 ## Security
 
