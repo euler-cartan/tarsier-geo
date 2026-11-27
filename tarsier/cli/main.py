@@ -1,16 +1,22 @@
 """`tarsier-geo` command-line entry point: start/stop (TAD §2.2, §2.3)."""
 
 import argparse
+import http.client
 import json
 import os
 import signal
 import sys
+import threading
+import time
 import webbrowser
 
 import uvicorn
 
 from tarsier.cli.ports import DEFAULT_PORT, find_free_port, is_port_free
 from tarsier.storage.paths import run_state_path
+
+_READY_CHECK_SECONDS = 0.25
+_READY_WAIT_SECONDS = 30
 
 
 def _cmd_start(args: argparse.Namespace) -> int:
@@ -41,7 +47,11 @@ def _cmd_start(args: argparse.Namespace) -> int:
     state_file.write_text(json.dumps({"pid": os.getpid(), "port": port}))
 
     if not args.no_browser:
-        webbrowser.open(url)
+        # uvicorn.run blocks, so another thread waits for it to answer. Daemon:
+        # stopping Tarsier must not wait for this, or open a browser afterwards.
+        threading.Thread(
+            target=_open_browser_when_ready, args=(port, url), name="tarsier-open-browser", daemon=True
+        ).start()
 
     try:
         uvicorn.run("tarsier.api.app:create_app", factory=True, host="127.0.0.1", port=port)
@@ -49,6 +59,35 @@ def _cmd_start(args: argparse.Namespace) -> int:
         state_file.unlink(missing_ok=True)
 
     return 0
+
+
+def _open_browser_when_ready(port: int, url: str) -> None:
+    deadline = time.monotonic() + _READY_WAIT_SECONDS
+    while (started := time.monotonic()) < deadline:
+        if _server_answers(port, deadline - started):
+            webbrowser.open(url)
+            return
+        time.sleep(max(0.0, started + _READY_CHECK_SECONDS - time.monotonic()))
+    print(
+        f"Tarsier did not answer within {_READY_WAIT_SECONDS} seconds, so the browser was not opened. "
+        f"When it is ready, open {url}",
+        flush=True,
+    )
+
+
+def _server_answers(port: int, timeout: float) -> bool:
+    # http.client ignores system proxy settings. The connect timeout is short
+    # because Windows can take seconds to refuse a connection.
+    connection = http.client.HTTPConnection("127.0.0.1", port, timeout=_READY_CHECK_SECONDS)
+    try:
+        connection.connect()
+        connection.sock.settimeout(timeout)
+        connection.request("GET", "/api/health")
+        return connection.getresponse().status == 200
+    except (OSError, http.client.HTTPException):
+        return False
+    finally:
+        connection.close()
 
 
 def _recorded_server_is_up(state_file) -> bool:
