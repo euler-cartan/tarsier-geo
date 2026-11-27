@@ -35,7 +35,7 @@
 
 ## 1. What Tarsier is
 
-Tarsier is a tool that **watches geospatial databases and shows their full health, history, and quality on dashboards.** Think of it as a **health record ("Kundali") for a database** — one place to see everything about the data: statistics, quality problems, and what changed, by whom, and when.
+Tarsier is a tool that **watches geospatial databases and shows their full health, history, and quality on dashboards.** Think of it as a **health record for a database** — one place to see everything about the data: statistics, quality problems, and what changed, by whom, and when.
 
 **Core promise:** a team can open Tarsier and instantly understand the state of their geospatial data — without writing code or SQL, and without being blind to silent changes or hidden errors.
 
@@ -125,7 +125,7 @@ Full treatment: overview, statistics, quality (including geometry/topology/proje
 
 Every feature below is in v1. (During build, phases may be grouped — see Section 10 — but all are required for v1 to be "done.")
 
-### 7.1 Feature A — Overview page (the "Kundali")
+### 7.1 Feature A — Overview page
 The main landing view for a whole database.
 
 Must show:
@@ -151,7 +151,7 @@ Must show:
 - **Null geometry** — rows that should have a shape but don't.
 - **AI query box** — the user types a request in plain English ("show items with low stock") and the AI turns it into the correct query. **The user never writes SQL.**
 
-**Acceptance check:** For a sample dataset, every statistic above is correct; the AI query box returns correct results for at least a set of test questions (defined in the internal exam, Section 11).
+**Acceptance check:** For a sample dataset, every statistic above is correct; the AI query box returns correct results for at least a set of private test questions (see the internal exam, Section 11).
 
 ### 7.3 Feature C — Quality checks (advanced)
 Catches problems normal GIS tools miss.
@@ -326,7 +326,7 @@ Before real users, Tarsier must pass an internal test suite we build. It should 
 - Test datasets for vector, raster (in DB), tabular (DB table + CSV).
 - A dataset with **planted errors** (bad geometry, topology gaps/overlaps/slivers, nulls, out-of-range values, wrong projection, duplicates) to test Feature C.
 - A **PostGIS test database** where we make edits, deletes, mass deletes, and schema changes to test Feature D.
-- A set of **plain-English questions** with known correct answers to test the AI query box. For TRS-025, the assistant answers a set of known test questions correctly against planted data.
+- A set of **plain-English questions** with known correct answers to test the AI query box. For TRS-025, the assistant answers a set of known test questions correctly against planted data. The exact exam questions are kept private.
 - Alert and automation **scenarios** with known expected outcomes.
 
 Each feature's Acceptance check (Sections 6–9) maps to exam items. (The full mapping lives in the FTL.)

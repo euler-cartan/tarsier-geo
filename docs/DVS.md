@@ -73,7 +73,7 @@ Reusing FSD tokens, applied consistently across all charts:
 
 **Type:** **Circular ring gauge** (donut-style progress ring), 0–100.
 - Ring color: `status-good` (score ≥ 80), `status-warning` (score 50–79), `status-danger` (score < 50).
-- Center: the number itself in `stat-xl` typography.
+- Center: the number itself at 30px / weight 600 (not `stat-xl`).
 - Two sizes: **large** (Overview headline, detail header — 96px diameter) and **small** (layer list row — 28px diameter, number-only label beside it, no ring needed at that size — just a colored dot + number).
 
 **Interaction:** hovering the large ring shows a tooltip breaking down the score's contributing factors (e.g. "Quality: 90, Freshness: 70, Completeness: 95").
