@@ -1,6 +1,6 @@
 # Tarsier
 
-A health record ("Kundali") for a geospatial database: one place to see statistics,
+A health record for a geospatial database: one place to see statistics,
 quality issues, and change history for vector, raster, and tabular data — without
 writing SQL. **Read-only on user data in v1.**
 The only write is the optional PostGIS change-tracking trigger, installed only with explicit permission.
@@ -70,6 +70,8 @@ npm run build --workspace=frontend
 .\.venv\Scripts\python.exe -m pip install --no-deps -e .
 .\.venv\Scripts\tarsier-geo.exe start
 ```
+
+Use `.\.venv\Scripts\` in front of other `tarsier-geo` commands too.
 
 **Linux or macOS** (not yet qualified). The lock files are for
 Windows, so install without them:

@@ -87,25 +87,31 @@ sidebar-active-bg:      #212121
 
 ### 2.2 Typography
 
-Fonts by token: `display-*` use **Newsreader**; `heading-*`, `body-*`, `button-md`, `caption` and `micro` use **Inter**; `code` uses the system's monospace font.
+Fonts by token: `display-*` and `stat-xl` use **Newsreader**; `heading-*`, `body-*`, `button-md`, `caption`, `micro` and `label` use **Inter**; `code` uses the system's monospace font.
 
 | Token | Size | Weight | Letter-spacing | Use in Tarsier |
 |---|---|---|---|---|
-| `display-lg` | 28px | 400 | -0.6px | Page titles (e.g. "Overview," "water_mains_v2") |
-| `display-md` | 22px | 400 | -0.3px | Section titles, modal titles |
-| `heading-lg` | 20px | 425 | -0.2px | Card titles, panel headers |
-| `body-lg` | 18px | 400 | -0.18px | Emphasized summary text (e.g. AI explanation text) |
-| `body-md` | 16px | 400 | normal | Default UI text, table cells |
-| `body-strong` | 16px | 600 | normal | Key numbers (row counts, health scores) — v2 caps weight at 600, so no 700 weight anywhere |
-| `button-md` | 16px | 400 | normal | Button labels (v2's buttons stay at regular weight, not bold) |
-| `caption` | 14px | 400 | -0.13px | Helper text, timestamps, table headers |
-| `micro` | 12px | 500–600 | normal, often uppercase | Badges, tags, fine print |
-| `code` | 15px / 13px | 400 | normal | The AI query box's shown filter (FSD §8), technical badges, timestamps in the change feed, layer/column technical names |
+| `display-mega` | 64px | 300 | -1.92px | Welcome headline on first run |
+| `display-xl` | 48px (36px on Settings) | 300 | -0.96px | Overview and item-page titles, "Your connections", Settings |
+| `display-lg` | 36px | 300 | -0.36px | Other page titles (e.g. "Alerts," "Changes") |
+| `display-md` | 32px | 300 | -0.32px | Review dialog titles and other large section titles |
+| `display-sm` | 24px | 300 | 0.16px | Section titles, empty-state headings, connection names |
+| `heading-lg` | 20px | 500 | 0 | Card titles, panel headers |
+| `body-lg` | 18px | 500 | 0.18px | Welcome intro text (set to 400 there), emphasized notes |
+| `body-md` | 16px | 400 | 0.16px | Default UI text, form fields (data tables use 15px) |
+| `body-strong` | 16px | 500 | 0.16px | Defined, not used by any screen yet |
+| `button-md` | 15px | 500 | 0 | Button labels (13px on Settings) |
+| `caption` | 14px | 400 | 0 | Helper text, timestamps |
+| `micro` | 12px | 500 | 0.2px | Fine print, small notes |
+| `label` | 12px | 600 | 0.96px, uppercase | Small eyebrow labels above titles and groups |
+| `code` | browser default | 400 | normal | Preformatted blocks (no dedicated type style) |
 
-**New, large numeric style for Tarsier (unchanged from before):**
-| `stat-xl` | 40px / 400, tabular numbers, tight tracking | Headline stats (health score, row count) on Overview and detail pages |
+**Large numeric style:**
+| `stat-xl` | 48px / 300, tabular numbers, -0.96px tracking | Headline stats on Overview (total layers, total size) |
 
-**Don't** use weights above 600 anywhere (v2's own rule) — this replaces the old `body-strong` 700-weight token.
+Some components set their own sizes outside these tokens (e.g. data tables 15px, table headers 12px/600 uppercase, status badges 11px/600 uppercase, the health-ring number 30px/600).
+
+**Don't** use weights above 600 anywhere (v2's own rule) — this replaces the old `body-strong` 700-weight token. Exception: the Flowchart icon letter uses weight 700.
 
 ### 2.3 Spacing, radius, elevation
 
@@ -162,8 +168,8 @@ radius-pill:  9999px (primary buttons only)
 
 **If no connections exist (first run):**
 - Centered single-column welcome panel on `canvas`.
-- `display-md` headline: "Connect your first database."
-- Short `body-md` description of what Tarsier does (one sentence).
+- `display-mega` headline: "Connect your first database."
+- Short `body-lg` description of what Tarsier does (one sentence).
 - A set of connection-type cards (one per type: PostGIS, Oracle, SQL Server, Files, ArcGIS Enterprise, Geoserver) using `card-feature` styling — icon, type name, one-line description.
 - Clicking a card opens the **Add Connection flow** (Section 5).
 
@@ -193,15 +199,15 @@ A PostgreSQL database without PostGIS remains usable for non-spatial tables. Sho
 
 ---
 
-## 6. Screen: Overview ("the Kundali")
+## 6. Screen: Overview
 
 Every sample-derived result must be labelled wherever shown. Zero findings in a sample display 'none found in sample, not a full check' in a neutral state. Aggregate health carries a sample label when sampled quality contributes. Sample-first mode remains backend-only in rc1.
 
 **Purpose:** PRD Feature A — the landing page for a connected database.
 
 **Layout (top to bottom):**
-1. **Header row** — database name (`display-lg`), connection type badge, "last checked" caption, a "Run full check" button (`button-secondary-ghost`).
-2. **Headline stats row** — 4 stat cards using `stat-xl` numbers: Overall health score (color-coded ring: good/warning/danger), total layers, total size, last change detected.
+1. **Header row** — database name (`display-xl`), connection type badge, "last checked" caption, a "Run full check" button (`button-secondary-ghost`).
+2. **Headline stats row** — 4 stat cards: Overall health score (color-coded ring: good/warning/danger; ring number 30px / weight 600), total layers and total size (`stat-xl` numbers), last change detected.
 3. **Layer list table** — sortable/filterable table. Columns: name, type icon (vector/raster/tabular), row/feature count, size, last changed, projection, index present (✓/✗), quality score (colored badge), health score (colored badge). Clicking a row opens the **Detail page** (Section 7).
    - **Stale layers** and **heavy layers** are flagged with a small `micro` badge in the row (e.g. "Stale — 94 days").
 4. **Relationships summary card** — small preview diagram + "Open full flowchart →" link to Section 12.
@@ -218,7 +224,7 @@ Every sample-derived result must be labelled wherever shown. Zero findings in a 
 **Purpose:** PRD Feature 7.9 — the dedicated page for one item, type-aware.
 
 **Layout (shared header, then type-specific tabs):**
-1. **Header** — item name (`display-lg`), type badge, health score badge, "Run checks now" button.
+1. **Header** — item name (`display-xl`), type badge, health score badge, "Run checks now" button.
 2. **Tabs** (only the tabs relevant to this item's type are shown):
    - **Overview** — always shown: size, last changed, schema/column list, map preview (vector/raster) or sample rows (tabular).
    - **Statistics** — PRD Feature B (see Section 8). Hidden if not applicable. **Hidden entirely for raster items** — raster per-band numbers and histograms belong on the raster Overview tab (this section), not Feature B's column-stats tab.

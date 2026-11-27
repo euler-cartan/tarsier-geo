@@ -9,7 +9,7 @@ import ProjectionChart from "../components/ProjectionChart";
 import { ErrorState } from "../components/States";
 import OverviewSkeleton from "./OverviewSkeleton";
 
-/** FSD §6  -  Overview ("the Kundali"), PRD §7.1 (Feature A). */
+/** FSD §6  -  Overview, PRD §7.1 (Feature A). */
 function Overview() {
   const { connectionId } = useParams<{ connectionId: string }>();
   const [summary, setSummary] = useState<OverviewSummary | null>(null);
