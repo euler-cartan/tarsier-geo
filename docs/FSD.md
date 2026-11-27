@@ -201,7 +201,7 @@ A PostgreSQL database without PostGIS remains usable for non-spatial tables. Sho
 
 ## 6. Screen: Overview
 
-Every sample-derived result must be labelled wherever shown. Zero findings in a sample display 'none found in sample, not a full check' in a neutral state. Aggregate health carries a sample label when sampled quality contributes. Sample-first mode remains backend-only in rc1.
+Every sample-derived result must be labelled wherever shown. Zero findings in a sample display 'none found in sample, not a full check' in a neutral state. Aggregate health carries a sample label when sampled quality contributes. Sample-first mode remains backend-only in rc2.
 
 **Purpose:** PRD Feature A — the landing page for a connected database.
 

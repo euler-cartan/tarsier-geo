@@ -10,8 +10,8 @@ ROOT = Path(__file__).resolve().parents[2]
 
 
 def test_rc_versions_match_pep440_semver_and_about():
-    tag = 'v1.0.0-rc1'
-    assert Version(__version__) == Version('1.0.0rc1')
+    tag = 'v1.0.0-rc2'
+    assert Version(__version__) == Version('1.0.0rc2')
     assert tomllib.loads((ROOT/'pyproject.toml').read_text())['project']['version'] == __version__
     assert json.loads((ROOT/'frontend/package.json').read_text())['version'] == tag.removeprefix('v')
     assert json.loads((ROOT/'package.json').read_text())['version'] == tag.removeprefix('v')
